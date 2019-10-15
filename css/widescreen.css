@@ -23,6 +23,7 @@ header{}
 
 @media only screen and (min-width: 768px){
   .col-1 {width: 8.33%;}
+  .col-1-1 {width: 14.33%;}
   .col-2 {width: 16.66%;}
   .col-3 {width: 25%;}
   .col-4 {width: 33.33%;}
@@ -80,8 +81,6 @@ header{}
       color:#176175;
   }
 
-
-
   h1{
     text-align: center;
     font-size: 2.5vw;
@@ -91,6 +90,7 @@ header{}
   .logimg{
     background-color: #287094;
     height: 100%;
+    border-radius: 0.8em 0 0 0.8em;
   }
 
   .fleft{
@@ -110,7 +110,42 @@ header{}
     box-shadow: 5px 5px 20px 10px rgba(0, 0, 0, 0.3);
   }
 
-  aside{
-    border-radius: 0.8em 0 0 0.8em;
+
+  /* INTERFEJS */
+
+  .inteMenu{
+    background-color: #287094;
+    height: 35em;
+    position: absolute;
+    left: 3em;
+    top: 3em;
+    bottom: 1em;
+  }
+
+  .inteNav{
+    background-color: #f6f6f6;
+    height: 3em;
+    position: absolute;
+    right:3em;
+    top:4em;
+
+  }
+
+  .inteMain{
+    background-color: #f6f6f6;
+    height: 28em;
+    position: absolute;
+    right:3em;
+    top:9em;
+  }
+
+  .inteNav > ul li{
+    display: inline;
+    margin-left: 1em;
+  }
+  .inteNav ul{
+    float: right;
+    margin-right: 3em;
+    margin-top: 0.8em;
   }
 }
