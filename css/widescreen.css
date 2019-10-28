@@ -1,5 +1,4 @@
 *{
-  box-sizing: border-box;
   padding: 0;
   margin: 0;
 }
@@ -21,10 +20,11 @@ header{}
 
 /* DESKTOP */
 
-@media only screen and (min-width: 768px){
+@media only screen and (min-width: 1024px){
   .col-1 {width: 8.33%;}
   .col-1-1 {width: 14.33%;}
   .col-2 {width: 16.66%;}
+  .col-3-1{width:22.4%;}
   .col-3 {width: 25%;}
   .col-4 {width: 33.33%;}
   .col-5 {width: 41.66%;}
@@ -113,13 +113,30 @@ header{}
 
   /* INTERFEJS */
 
+  a{
+    text-decoration: none;
+    color: none
+  }
+
+  a:visited{
+      color:black;
+  }
+
   .inteMenu{
-    background-color: #287094;
-    height: 35em;
+    background-color: #242321;
+    height: 40em;
     position: absolute;
     left: 3em;
     top: 3em;
     bottom: 1em;
+  }
+
+  .inteMenu:hover{
+    box-shadow: 5px 5px 20px 10px rgba(0, 0, 0, 0.5);
+  }
+
+  .inteNav:hover{
+    box-shadow: 5px 5px 20px 10px rgba(0, 0, 0, 0.3);
   }
 
   .inteNav{
@@ -128,24 +145,99 @@ header{}
     position: absolute;
     right:3em;
     top:4em;
-
   }
 
   .inteMain{
-    background-color: #f6f6f6;
-    height: 28em;
+    height: 32em;
     position: absolute;
     right:3em;
     top:9em;
   }
 
-  .inteNav > ul li{
+  /* MENU i NAV*/
+  .inteNav ul li{
     display: inline;
     margin-left: 1em;
+    padding: 1em 0 0.75em 0;
+    font-size: 1em;
   }
+
+  .inteNav ul li:hover{
+    border-bottom:0.3em solid #ffac1d;
+  }
+
   .inteNav ul{
     float: right;
     margin-right: 3em;
-    margin-top: 0.8em;
+    padding-top: 0.8em;
+    height: 3em;
+
+  }
+
+  .inteMenu ul {
+      margin-top: 3em;
+
+  }
+
+  .inteMenu  ul li{
+    list-style-type: none;
+    text-align: center;
+    padding: 1.2em 0 1.2em 0;
+
+  }
+  .inteMenu  ul li a{
+    color: #f6f6f6;
+  }
+
+  .inteMenu  ul li:hover{
+    background-color: #33322F;
+    border: 0.25em solid #ffac1d;
+    border-top: none;
+    border-bottom: none;
+
+  }
+
+  /*Main :sekcje*/
+
+  .sec1{
+    height: 7em;
+    margin-bottom: 1em;
+  }
+
+  .sec1 > div{
+    height: 7em;
+    display: inline-block;
+    margin-right:3%;
+    background-color: #f6f6f6;
+  }
+
+
+  [class*='sec']  div:hover{
+    box-shadow: 5px 5px 20px 10px rgba(0, 0, 0, 0.3);
+    background-color: rgba(255,172,29, 0.6); /*255,172,29*/
+  }
+
+  .sec1 > div:last-child{
+    margin-right: 0%;
+  }
+
+  .sec2{
+    height: 8em;
+    margin-bottom: 1em;
+  }
+
+  .sec2 > div {
+    width:48.3%;
+    height: 8em;
+    background-color: #f6f6f6;
+  }
+
+  .sec3{
+    height: 15em;
+  }
+
+  .sec3 > div {
+    height: 15em;
+    background-color: #f6f6f6;
   }
 }
