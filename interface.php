@@ -34,40 +34,26 @@
 
         <main class="col-9 inteMain">
 
-          <section class="col-12 sec1">
+          <section class="col-12 sec4">
 
-            <div class="col-3-1">
-
+            <div class="col-3-2">
+              <p>Losowe słówko</p>
             </div>
 
-            <div class="col-3-1">
-
+            <div class="col-3-2">
+              Ostatnia zestaw
             </div>
 
-            <div class="col-3-1">
-
-            </div>
-
-            <div class="col-3-1">
-
+            <div class="col-3-2">
+              Ulubiona kategoria
             </div>
 
           </section>
 
-          <section class="col-12 sec2">
-
-            <div class=" fleft">
-
-            </div>
-
-            <div class=" fright">
-
-            </div>
-
-          </section>
 
           <section class="col-12 sec3">
             <div class="col-12">
+              Level
             </div>
           </section>
 

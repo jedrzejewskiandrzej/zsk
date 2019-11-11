@@ -28,7 +28,7 @@
             <input type="text" class="col-6" placeholder="Password"><br>
             <input type="text" class="col-6" placeholder="Email"><br>
             <input type="button" class="" id="but1" value="Zarejestruj się">
-            <input type="button" class="" id="but2" value="Zaloguj się">
+            <a href="signin.php"><input type="button" class="" id="but2" value="Zaloguj się"></a>
 
       </form>
 

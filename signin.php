@@ -5,6 +5,7 @@
     <title>SmAnSm</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <style media="screen">
       <?php
         include './css/widescreen.css';
@@ -26,9 +27,9 @@
 
             <input type="text" class="col-6" placeholder="Login"><br>
             <input type="text" class="col-6" placeholder="Password"><br>
-            
-            <input type="button" class="" id="but1" value="Zaloguj się">
-            <input type="button" class="" id="but2" value="Zarejestruj się">
+
+            <input type="button" onmouseover="ch2()" id="but1" value="Zaloguj się">
+            <a href="register.php"><input type="button" onmouseover="ch1()" id="but2" value="Zarejestruj się">
 
       </form>
 
