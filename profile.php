@@ -34,27 +34,36 @@
 
         <main class="col-9 inteMain">
 
-          <section class="col-12 sec1">
-
-            <div class="col-3-2">
-              <p>Losowe słówko</p>
+          <section  class="profimg">
+            <div class="proflvl">
+              15
             </div>
-
-            <div class="col-3-2">
-              Ostatnia zestaw
-            </div>
-
-            <div class="col-3-2">
-              Ulubiona kategoria
-            </div>
-
           </section>
 
+          <section class="profcon">
 
-          <section class="col-12 sec2">
-            <div class="col-12">
-              Level
-            </div>
+            <ul class="prof_ul1 fleft">
+              <li>Imię:</li>
+              <li>Nazwisko:</li>
+              <li>Email:</li>
+              <li>Login:</li>
+            </ul>
+
+            <ul class="prof_ul2 fleft ">
+              <li id="name">Paweł</li>
+              <li id="lastname">Kowalski</li>
+              <li id="email">pawel.kowalski@mail.com</li>
+              <li id="login">pawel123</li>
+            </ul>
+
+            <ul class="prof_ul3 fright">
+              <li><input type="text" name="name" placeholder="nowe imię"></li>
+              <li><input type="text" name="lastname" placeholder="nowe nazwisko"></li>
+              <li><input type="text" name="email" placeholder="nowy email"></li>
+              <li><input type="text" name="login" placeholder="nowe login"></li>
+              <li><button>Zastosuj zmiany</button></li>
+            </ul>
+
           </section>
 
         </main>
