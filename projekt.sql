@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Czas generowania: 11 Lis 2019, 21:52
+-- Czas generowania: 14 Lis 2019, 19:57
 -- Wersja serwera: 10.1.38-MariaDB
 -- Wersja PHP: 7.2.15
 
@@ -73,7 +73,7 @@ CREATE TABLE `user` (
   `lastname` text COLLATE utf8mb4_polish_ci NOT NULL,
   `level` int(2) NOT NULL,
   `type` text COLLATE utf8mb4_polish_ci NOT NULL,
-  `password` varchar(10) COLLATE utf8mb4_polish_ci NOT NULL
+  `password` varchar(72) COLLATE utf8mb4_polish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_polish_ci;
 
 -- --------------------------------------------------------

@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Profil</title>
+    <title>Zestaw</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style media="screen">
       <?php
@@ -34,35 +34,19 @@
 
         <main class="col-9 inteMain">
 
-          <section  class="profimg">
-            <div class="proflvl">
-              15
+          <section class="col-12 sec3">
+
+            <div class="col-3-1">
+
             </div>
-          </section>
 
-          <section class="profcon">
+            <div class="col-3-1">
 
-            <ul class="prof_ul1 fleft">
-              <li>Imię:</li>
-              <li>Nazwisko:</li>
-              <li>Email:</li>
-              <li>Login:</li>
-            </ul>
+            </div>
 
-            <ul class="prof_ul2 fleft ">
-              <li id="name">Paweł</li>
-              <li id="lastname">Kowalski</li>
-              <li id="email">pawel.kowalski@mail.com</li>
-              <li id="login">pawel123</li>
-            </ul>
+            <div class="col-3-2">
 
-            <ul class="prof_ul3 fright">
-              <li><input type="text" name="name" placeholder="nowe imię"></li>
-              <li><input type="text" name="lastname" placeholder="nowe nazwisko"></li>
-              <li><input type="text" name="email" placeholder="nowy email"></li>
-              <li><input type="text" name="login" placeholder="nowe login"></li>
-              <li><button>Zastosuj zmiany</button></li>
-            </ul>
+            </div>
 
           </section>
 

@@ -15,10 +15,11 @@
         <menu class="col-1-1 inteMenu">
           <img src="./images/img.jpg" alt="Supeł logo">
           <ul class="col-12">
-            <li><a href="interface.php">Strona główna</a></li>
-            <li><a href="#">Moje zestawy</a></li>
+            <li><a href="interfaceTEACHER.php">Strona główna</a></li>
+            <li><a href="set.php">Moje zestawy</a></li>
             <li><a href="#">Kategorie</a></li>
             <li><a href="#">Szybka powtórka</a></li>
+            <li><a href="#">Dodaj materiał do nauki</a></li>
           </ul>
         </menu>
 
