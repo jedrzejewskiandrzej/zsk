@@ -36,17 +36,7 @@
 
           <section class="col-12 sec3">
 
-            <div class="col-3-1">
 
-            </div>
-
-            <div class="col-3-1">
-
-            </div>
-
-            <div class="col-3-2">
-
-            </div>
 
           </section>
 
