@@ -9,18 +9,23 @@
         include './css/widescreen.css';
        ?>
     </style>
+    <script>
+    <?php
+      include './js/script.js';
+     ?>
+    </script>
   </head>
-  <body>
+  <body onload="move()">
 
         <menu class="col-1-1 inteMenu">
-          <img src="./images/img.jpg" alt="Supeł logo">
+
           <ul class="col-12">
             <li><a href="interfaceADMIN.php">Strona główna</a></li>
-            <li><a href="set.php">Moje zestawy</a></li>
+            <li><a href="setUSER.php">Moje zestawy</a></li>
             <li><a href="#">Kategorie</a></li>
             <li><a href="#">Szybka powtórka</a></li>
-            <li><a href="#">Dodaj materiał do nauki</a></li>
-            <li><a href="#">Administruj</a></li>
+            <li><a href="#">Dodaj materiały</a></li>
+            <li><a href="#">Zarządzaj</a></li>
           </ul>
         </menu>
 
@@ -29,7 +34,6 @@
             <li><a href="#">Powiadomienia</a></li>
             <li><a href="#">Napisz wiadomość</a></li>
             <li><a href="profile.php">Mój profil</a></li>
-            <li><a href="#">Zmień hasło</a></li>
             <li><a href="#">Wyloguj</a></li>
           </ul>
         </nav>
@@ -39,15 +43,19 @@
           <section class="col-12 sec1">
 
             <div class="col-3-2">
-              <p>Losowe słówko</p>
+              <p class="headpar">Losowe słówko</p>
+              <p class="midpar">BLA</p>
             </div>
 
             <div class="col-3-2">
-              Ostatnia zestaw
+              <p class="headpar">Ostatnia zestaw</p>
+              <p class="midpar">BLA</p>
             </div>
 
             <div class="col-3-2">
-              Ulubiona kategoria
+
+              <p class="headpar">Ulubiona kategoria</p>
+              <p class="midpar">BLA</p>
             </div>
 
           </section>
@@ -55,7 +63,11 @@
 
           <section class="col-12 sec2">
             <div class="col-12">
-              Level
+              <div class="progressBarBack">
+                <div id="myBar" class="progressBarFront">
+                  20%
+                </div>
+              </div>
             </div>
           </section>
 

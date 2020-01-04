@@ -38,6 +38,7 @@ header{}
   .col-11 {width: 91.66%;}
   .col-12 {width: 100%;}
 
+
   /* FORM */
 
   form{
@@ -58,6 +59,7 @@ header{}
     background-color:#f6f6f6;
     outline: none;
   }
+
 
     #but1{
     width:22%;
@@ -145,10 +147,11 @@ header{}
     left: 3em;
     top: 3em;
     bottom: 1em;
+
   }
 
   .inteMenu:hover{
-    box-shadow: 5px 5px 20px 10px rgba(0, 0, 0, 0.3);
+    box-shadow: 5px 5px 20px 10px rgba(0, 0, 0, 0.4);
   }
 
   .inteNav:hover{
@@ -222,16 +225,26 @@ align-items: center;
   }
 
   /*Main :sekcje*/
-
-  .sec > div >p {
-      display: inline;
-      margin-block-start: 0em;
-      margin-block-end: 0em;
-      margin-inline-start: 0px;
-      margin-inline-end: 0px;
+  .headpar{
+    text-align: center;
+    font-size: 1.5em;
+    margin-top: 0.5em;
   }
 
-  [class*='sec'] div:hover{
+  .midpar{
+    height: 65%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size:4em;
+    color: #032539;/*#57cad5;*/
+  }
+
+  .sec > div >p {
+      display: block;
+  }
+
+  [class*='sec'] div:not([class*='progressBar']):hover{
     box-shadow:0px 0px 12px 5px rgba(0, 0, 0, 0.5);
     transition: 0.3s;
     background-color: #F08400;
@@ -267,6 +280,29 @@ align-items: center;
   .sec2 > div {
     height: 15em;
     background-color: #f6f6f6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  [class*='progressBar']{
+    border-radius: 30px;
+  }
+
+  .progressBarBack{
+    width: 80%;
+    height: 1.8em;
+    background-color: #032539;
+  }
+
+  .progressBarFront{
+    width:20%;
+    height: inherit;
+    background-color: #1c768f;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
   }
 
   .sec3{
@@ -309,7 +345,7 @@ align-items: center;
   position:relative;
   top: 1em;
   height: 16em;
-  width: 50em;
+  width: 90%;
   margin-left: auto;
   margin-right: auto;
   background-color:#f6f6f6 ;
@@ -320,17 +356,24 @@ align-items: center;
 }
 
 .prof_ul1{
-  width: 20%;
+  width: 10%;
   margin-left: 5%;
 }
 
 .prof_ul2{
-width: 40%;
+width: 30%;
 }
 
 .prof_ul3{
+  width: 20%;
+}
+
+.prof_ul4{
   width: 30%;
-  margin-right: 5%;
+  border-left: 0.2em dashed #d4d4ce;
+  display: flex;
+  justify-content: center;
+  align-items:center;
 }
 
 [class*='prof_ul'] > li{
@@ -366,6 +409,17 @@ background-color: #f6f6f6;
 .profcon button:focus{
   outline: none;
 }
+
+.profpass{
+  width: 70%;
+  height: 70%;
+}
+
+.profpass > button{
+  margin-right: auto;
+  margin-left: auto;
+}
+
 
 /* SET */
 
@@ -430,5 +484,5 @@ height: 8em;
 
 .setView ul li{
   margin-top: 0.4em;
-  border-bottom: 0.1em solid #57cad5
+  border-bottom: 0.1em solid #57cad5;
 }

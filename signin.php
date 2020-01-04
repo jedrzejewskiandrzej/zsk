@@ -29,7 +29,7 @@
             <input type="text" class="col-6" placeholder="Password"><br>
 
             <input type="button" onmouseover="ch2()" id="but1" value="Zaloguj się">
-            <a href="register.php"><input type="button" onmouseover="ch1()" id="but2" value="Zarejestruj się">
+            <a href="register.php"><input type="button" onmouseover="ch1()" id="but2" value="Zarejestruj się"></a>
 
       </form>
 

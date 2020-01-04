@@ -13,11 +13,10 @@
   <body>
 
         <menu class="col-1-1 inteMenu">
-          <img src="./images/img.jpg" alt="Supeł logo">
+
           <ul class="col-12">
             <li><a href="interfaceUSER.php">Strona główna</a></li>
-            <li><a href="set.php">Moje zestawy</a></li>
-            <li><a href="#">Kategorie</a></li>
+            <li><a href="setUSER.php">Moje zestawy</a></li>
             <li><a href="#">Szybka powtórka</a></li>
           </ul>
         </menu>
@@ -41,10 +40,10 @@
                 <h3 class="setName">Nowe zestawy</h3>
 
               <ul class="set_ul1">
-                <li>ZESTAW</li>
-                <li>ZESTAW</li>
-                <li>ZESTAW</li>
-                <li>ZESTAW</li>
+                <li><a href="#">ZESTAW</a></li>
+                <li><a href="#">ZESTAW</a></li>
+                <li><a href="#">ZESTAW</a></li>
+                <li><a href="#">ZESTAW</a></li>
               </ul>
 
             </div>
@@ -53,7 +52,7 @@
               <h3 class="setName">Zaczęte zestawy</h3>
 
             <ul class="set_ul2">
-              <li>ZESTAW</li>
+              <li><a href="#">ZESTAW</a></li>
             </ul>
 
             </div>
@@ -63,7 +62,7 @@
               <h3 class="setName">Zdane zestawy</h3>
 
               <ul class="set_ul3">
-                <li>ZESTAW</li>
+                <li><a href="#">ZESTAW</a></li>
               </ul>
 
             </div>
@@ -73,14 +72,12 @@
               <div class="setInfo col-12">
                 <ul class="fleft">
                   <li>Nazwa:</li>
-                  <li>Kategoria:</li>
                   <li>Ile opanowane:</li>
                   <li>Kiedy ostatnio przypomniane:</li>
                 </ul>
 
                 <ul class="fright">
                   <li>ZESTAW</li>
-                  <li>???</li>
                   <li>???</li>
                   <li>???</li>
                 </ul>

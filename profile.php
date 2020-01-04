@@ -13,7 +13,7 @@
   <body>
 
         <menu class="col-1-1 inteMenu">
-          <img src="./images/img.jpg" alt="Supeł logo">
+
           <ul class="col-12">
             <li><a href="interfaceUSER.php">Strona główna</a></li>
             <li><a href="set.php">Moje zestawy</a></li>
@@ -27,7 +27,6 @@
             <li><a href="#">Powiadomienia</a></li>
             <li><a href="#">Napisz wiadomość</a></li>
             <li><a href="profile.php">Mój profil</a></li>
-            <li><a href="#">Zmień hasło</a></li>
             <li><a href="#">Wyloguj</a></li>
           </ul>
         </nav>
@@ -56,12 +55,20 @@
               <li id="login">pawel123</li>
             </ul>
 
-            <ul class="prof_ul3 fright">
+            <ul class="prof_ul3 fleft">
               <li><input type="text" name="name" placeholder="nowe imię"></li>
               <li><input type="text" name="lastname" placeholder="nowe nazwisko"></li>
               <li><input type="text" name="email" placeholder="nowy email"></li>
               <li><input type="text" name="login" placeholder="nowe login"></li>
               <li><button>Zastosuj zmiany</button></li>
+            </ul>
+
+            <ul class="prof_ul4 fright">
+              <form class="profpass" method="post">
+                <input type="password" name="pass1" placeholder="Podaj nowe hasło">
+                <input type="password" name="pass2" placeholder="Potwierdź nowe hasło">
+                <button type="button" name="button">Potwierdź</button>
+              </form>
             </ul>
 
           </section>
