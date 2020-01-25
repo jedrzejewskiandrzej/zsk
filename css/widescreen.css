@@ -39,9 +39,9 @@ header{}
   .col-12 {width: 100%;}
 
 
-  /* FORM */
+  /* FORM LOGIN & REGISTER*/
 
-  form{
+  .first{
     font-size: 3vw;
     padding-bottom: 1em;
     padding-top: 1em;
@@ -50,7 +50,7 @@ header{}
     height: 100%;
   }
 
-  form input[type="text"]{
+  .first input[type="text"]{
     margin:0 25% 0 25% ;
     height: 3em;
     border-width: 0 0 2px 0;
@@ -98,6 +98,9 @@ header{}
       transition: 1s;
     }
 
+    #but1,#but2:focus{
+      outline: none;
+    }
 
   h1{
     text-align: center;
@@ -117,6 +120,12 @@ header{}
 
   .fright{
     float: right;
+  }
+
+  .dflex{
+    display: flex;
+    justify-content: center;
+    align-items:baseline;
   }
 
   .pmid{
@@ -244,7 +253,7 @@ align-items: center;
       display: block;
   }
 
-  [class*='sec'] div:not([class*='progressBar']):hover{
+  [class*='sec'] div:not([class*='progressBar']&&[class*='sec4']):hover{
     box-shadow:0px 0px 12px 5px rgba(0, 0, 0, 0.5);
     transition: 0.3s;
     background-color: #F08400;
@@ -317,6 +326,12 @@ align-items: center;
   }
 
 
+
+  .sec4 > div{
+    float: left;
+    margin-top: 1em;
+    background-color: #f6f6f6;
+  }
 /*POFILE*/
 
 .profimg{
@@ -366,6 +381,9 @@ width: 30%;
 
 .prof_ul3{
   width: 20%;
+  display: flex;
+  justify-content: center;
+  align-items:center;
 }
 
 .prof_ul4{
@@ -410,12 +428,52 @@ background-color: #f6f6f6;
   outline: none;
 }
 
-.profpass{
-  width: 70%;
-  height: 70%;
+.profinfo{
+  width: 100%;
+  height: 100%;
+  padding: 0;
 }
 
-.profpass > button{
+.profinfo input{
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 0.5em;
+  margin-bottom: 1em;
+  border-bottom: 1px solid grey;
+}
+
+.profinfo input:first-child{
+  margin-top: 1.5em;
+}
+
+.profinfo button{
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.profpass{
+  width: 70%;
+  height: 100%;
+  padding: 0;
+}
+
+.profpass input{
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 0.5em;
+  margin-bottom: 1em;
+  border-bottom: 1px solid grey;
+}
+
+.profpass input:first-child{
+  margin-top: 30%;
+}
+
+.profpass button{
+  display: block;
   margin-right: auto;
   margin-left: auto;
 }
@@ -424,9 +482,10 @@ background-color: #f6f6f6;
 /* SET */
 
 .setName{
-  text-align: center;
-  margin-top: 0.5em;
-  margin-bottom: 0.5em;
+  text-align: left;
+  margin-left: 1em;
+padding:  0.5em 0 0.5em 0;
+
   height: 1em;
 }
 
@@ -450,39 +509,7 @@ background-color: #f6f6f6;
   transition: 0.1s;
 }
 
-.setInfo{
-height: 8em;
-}
-
-.setInfo ul{
-  list-style-type: none;
-  margin-left: 3%;
-}
-
-.setInfo ul:last-child{
-  margin-right: 3%;
-  margin-left: 0%;
-}
-
-.setInfo ul li{
-  margin-top: 0.4em;
-}
-
-.setView{
-  height: 20em;
-}
-
-.setView ul{
-  list-style-type: none;
-  margin-left: 25%;
-}
-
-.setView ul:last-child{
-  margin-right: 25%;
-  margin-left: 0%;
-}
-
-.setView ul li{
-  margin-top: 0.4em;
-  border-bottom: 0.1em solid #57cad5;
+.setViewBtn{
+  color: black;
+  text-decoration: underline;
 }

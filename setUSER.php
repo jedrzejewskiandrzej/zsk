@@ -23,19 +23,29 @@
 
         <nav class="col-9 inteNav">
           <ul>
-            <li><a href="#">Powiadomienia</a></li>
-            <li><a href="#">Napisz wiadomość</a></li>
             <li><a href="profile.php">Mój profil</a></li>
-            <li><a href="#">Zmień hasło</a></li>
-            <li><a href="#">Wyloguj</a></li>
+            <li><a href="signin.php">Wyloguj</a></li>
           </ul>
         </nav>
 
-        <main class="col-9 inteMain">
+        <main class="col-9 dflex inteMain">
 
-          <section class="col-12 sec3">
+          <section class="col-11 sec4">
 
-            <div class="col-2">
+            <div class="col-12">
+
+                <h3 class="setName">Nowe zestawy</h3>
+                <button type="button" class="setViewBtn" name="button">Pokaż</button>
+              <ul class="set_ul1">
+                <li><a href="#">ZESTAW</a></li>
+                <li><a href="#">ZESTAW</a></li>
+                <li><a href="#">ZESTAW</a></li>
+                <li><a href="#">ZESTAW</a></li>
+              </ul>
+
+            </div>
+
+            <div class="col-12">
 
                 <h3 class="setName">Nowe zestawy</h3>
 
@@ -48,66 +58,22 @@
 
             </div>
 
-            <div class="col-2">
-              <h3 class="setName">Zaczęte zestawy</h3>
+            <div class="col-12">
 
-            <ul class="set_ul2">
-              <li><a href="#">ZESTAW</a></li>
-            </ul>
+                <h3 class="setName">Nowe zestawy</h3>
 
-            </div>
-
-            <div class="col-2">
-
-              <h3 class="setName">Zdane zestawy</h3>
-
-              <ul class="set_ul3">
+              <ul class="set_ul1">
+                <li><a href="#">ZESTAW</a></li>
+                <li><a href="#">ZESTAW</a></li>
+                <li><a href="#">ZESTAW</a></li>
                 <li><a href="#">ZESTAW</a></li>
               </ul>
 
             </div>
 
-            <div class="col-3-3">
-              <h3 class="setName">Podgląd</h3>
-              <div class="setInfo col-12">
-                <ul class="fleft">
-                  <li>Nazwa:</li>
-                  <li>Ile opanowane:</li>
-                  <li>Kiedy ostatnio przypomniane:</li>
-                </ul>
-
-                <ul class="fright">
-                  <li>ZESTAW</li>
-                  <li>???</li>
-                  <li>???</li>
-                </ul>
-              </div>
-              <div class="setView col-12">
-
-                <ul class="fleft">
-                  <li>słówko</li>
-                  <li>słówko</li>
-                  <li>słówko</li>
-                  <li>słówko</li>
-                </ul>
-
-                <ul class="fright">
-                  <li>tłumaczenie</li>
-                  <li>tłumaczenie</li>
-                  <li>tłumaczenie</li>
-                  <li>tłumaczenie</li>
-                </ul>
-              </div>
-            </div>
-
           </section>
 
         </main>
-
-
-
-
-
 
   </body>
 </html>

@@ -20,9 +20,9 @@
 
     </aside>
 
-      <form class="col-7 fright" method="post">
+      <form class="first col-7 fright" method="post">
 
-            <h1>Zaloguj się do SmarterAndSmarter</h1>
+            <h1>Zarejestruj się do SmarterAndSmarter</h1>
 
             <input type="text" class="col-6" placeholder="Login"><br>
             <input type="text" class="col-6" placeholder="Password"><br>

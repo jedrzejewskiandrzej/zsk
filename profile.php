@@ -24,10 +24,8 @@
 
         <nav class="col-9 inteNav">
           <ul>
-            <li><a href="#">Powiadomienia</a></li>
-            <li><a href="#">Napisz wiadomość</a></li>
             <li><a href="profile.php">Mój profil</a></li>
-            <li><a href="#">Wyloguj</a></li>
+            <li><a href="signin.php">Wyloguj</a></li>
           </ul>
         </nav>
 
@@ -56,11 +54,13 @@
             </ul>
 
             <ul class="prof_ul3 fleft">
-              <li><input type="text" name="name" placeholder="nowe imię"></li>
-              <li><input type="text" name="lastname" placeholder="nowe nazwisko"></li>
-              <li><input type="text" name="email" placeholder="nowy email"></li>
-              <li><input type="text" name="login" placeholder="nowe login"></li>
-              <li><button>Zastosuj zmiany</button></li>
+              <form class="profinfo" method="post">
+                <input type="text" name="name" placeholder="Nowe imię">
+                <input type="text" name="lastname" placeholder="Nowe nazwisko">
+                <input type="text" name="email" placeholder="Nowy email">
+                <input type="text" name="login" placeholder="Nowe login">
+                <button>Zastosuj zmiany</button>
+              </form>
             </ul>
 
             <ul class="prof_ul4 fright">

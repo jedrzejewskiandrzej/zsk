@@ -30,10 +30,8 @@
 
         <nav class="col-9 inteNav">
           <ul>
-            <li><a href="#">Powiadomienia</a></li>
-            <li><a href="#">Napisz wiadomość</a></li>
             <li><a href="profile.php">Mój profil</a></li>
-            <li><a href="#">Wyloguj</a></li>
+            <li><a href="signin.php">Wyloguj</a></li>
           </ul>
         </nav>
 

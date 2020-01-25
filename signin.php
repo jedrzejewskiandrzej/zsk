@@ -21,7 +21,7 @@
 
     </aside>
 
-      <form class="col-7 fright" method="post">
+      <form class="first col-7 fright" method="post">
 
             <h1>Zaloguj się do SmarterAndSmarter</h1>
 
