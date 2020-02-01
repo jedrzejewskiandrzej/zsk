@@ -253,7 +253,8 @@ align-items: center;
       display: block;
   }
 
-  [class*='sec'] div:not([class*='progressBar']&&[class*='sec4']):hover{
+  /*[class*='sec'] div:not([class='progressBar']&&[class='sec4']):hover{*/
+  .sec1 div:hover,.sec2 :hover{
     box-shadow:0px 0px 12px 5px rgba(0, 0, 0, 0.5);
     transition: 0.3s;
     background-color: #F08400;

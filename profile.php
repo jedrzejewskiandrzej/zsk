@@ -17,7 +17,6 @@
           <ul class="col-12">
             <li><a href="interfaceUSER.php">Strona główna</a></li>
             <li><a href="set.php">Moje zestawy</a></li>
-            <li><a href="#">Kategorie</a></li>
             <li><a href="#">Szybka powtórka</a></li>
           </ul>
         </menu>
