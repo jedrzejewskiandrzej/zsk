@@ -8,16 +8,15 @@ session_start();
     <title>SmAnSm</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <link rel="stylesheet" href="./css/widescreen.css">
+
   </head>
-  <body>
+  <body class="reg_sign_back">
 
     <?php
     require_once("./scripts/connect.php");
+    require_once("./functions/test_input.php");
 
-    $name = $lastname = $login = $email = $email = $type = $password = $errorName = $errorLastname = $errorLogin = $errorEmail = $errorType = $errorPassword = '';
-
+    $name = $lastname = $login = $email = $password = $errorName = $errorLastname = $errorLogin = $errorEmail = $errorPassword = '';
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
@@ -25,7 +24,7 @@ session_start();
         $errorName = "Podaj imię.";
         } else {
           $name = test_input($_POST["name"]);
-          if (!preg_match("/^[A-Z][a-z]{2,}$/",$name)) {
+          if (!preg_match("/^[A-Z][a-ząęćżźńłóś]{3,}$/",$name)) {
             $errorName = "Upewnij się, że zacząłeś wielką literą i użyłeś tylko liter.";
         }else {
           $_SESSION["name"] = test_input($_POST["name"]);
@@ -36,7 +35,7 @@ session_start();
         $errorLastname = "Podaj nazwisko.";
         } else {
           $lastname = test_input($_POST["lastname"]);
-          if (!preg_match("/^[A-Z][a-z]{2,}$/",$lastname)) {
+          if (!preg_match("/^[A-Z][a-ząęćżźńłóś]{3,}$/",$lastname)) {
             $errorLastname = "Upewnij się, że zacząłeś wielką literą i użyłeś tylko liter.";
           }else {
             $_SESSION["lastname"] = test_input($_POST["lastname"]);
@@ -45,31 +44,51 @@ session_start();
 
       if (empty($_POST["login"])) {
         $errorLogin = "Podaj login.";
-      } else {
-        $login = test_input($_POST["login"]);
-        if (!preg_match("/^[0-9a-zA-Z]{4,}$/",$login)) {
-          $errorLogin = "Minimum 4 znaki";
         }else{
-          $_SESSION["login"]  = test_input($_POST["login"]);
+            $login = test_input($_POST["login"]);
+            if (!preg_match("/^.{4,}$/",$login)) {
+              $errorLogin = "Minimum 4 znaki";
+            }else{
+              $sql_login = "SELECT `login` FROM `user`";
+              $result = mysqli_query($connect, $sql_login);
+              $correct=1;
+
+              while ($row = mysqli_fetch_assoc($result)) {
+                if($row['login']==$login){
+                  $errorLogin =  "Podany login został już zajęty.";
+                  $correct=0;
+                }
+              }
+
+              if($correct==1){
+                $_SESSION["login"]  = test_input($_POST["login"]);
+              }
+            }
         }
-      }
+
 
       if (empty($_POST["email"])) {
         $errorEmail = "Podaj email.";
       } else {
         $email = test_input($_POST["email"]);
         if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-          $errorEmail = "Niepoprawny email";
+          $errorEmail = "Niepoprawny email.";
         }else{
-          $_SESSION["email"]  = test_input($_POST["email"]);
-        }
-      }
+          $sql_email = "SELECT `email` FROM `user`";
+          $result = mysqli_query($connect, $sql_email);
+          $correct=1;
 
-      if (empty($_POST["type"])) {
-        $errorType = "Gender is required";
-      } else {
-        $type = test_input($_POST["type"]);
-        $_SESSION["type"] = test_input($_POST["type"]);
+          while ($row = mysqli_fetch_assoc($result)) {
+            if($row['email']==$email){
+              $errorEmail=  "Podany email został już zajęty.";
+              $correct=0;
+            }
+          }
+
+          if($correct==1){
+            $_SESSION["email"]  = test_input($_POST["email"]);
+          }
+        }
       }
 
       if (empty($_POST["password"])) {
@@ -83,52 +102,51 @@ session_start();
         }
       }
 
-  if(!empty($_SESSION['password'])){ //wystarczy sprawdzić jedno pole w związku z tym, że cały formularz jest wymagany...akurat wybrałem sonbie hasło
+  if(!empty($_SESSION['login'])){ //wystarczy sprawdzić jedno pole w związku z tym, że cały formularz jest wymagany...akurat wybrałem sonbie hasło
   header('location: ./scripts/add_user.php');
   }
 
 }
 
-function test_input($data) {
-  $data = trim($data);
-  $data = stripslashes($data);
-  $data = htmlspecialchars($data);
-  return $data;
-}
      ?>
 
-    <content>
-      <div class="col-9 pmid">
+    <content class="col-12 dflex">
+      <div class="col-6 pmid1">
 
-        <aside class="col-5 logimg fleft">
 
-    </aside>
+    <form class="register_sign" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+      <h1>Register...hello</h1>
+      <ul>
 
-    <form class="register" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+      <li><input type="text" name="name" maxlength="20" placeholder="Podaj imię" value="<?php echo $name;?>" autofocus>
+      <?php if($errorName!= null){?> <span class="red_label"><?php echo $errorName; ?> </span> <?php } ?></li>
 
-      <input type="text" name="name" maxlength="20" placeholder="Podaj imię" value="<?php echo $name;?>" autofocus>
-      <?php if($errorName!= null){?> <span class="red_label"><?php echo $errorName; ?> </span> <?php } ?><br><br>
-      <input type="text" name="lastname" maxlength="30" placeholder="Podaj nazwisko" value="<?php echo $lastname;?>">
-      <?php if($errorLastname!= null){?> <span class="red_label"><?php echo $errorLastname; ?> </span> <?php } ?><br><br>
-      <input type="text" name="login" maxlength="20" placeholder="Podaj login" value="<?php echo $login;?>">
-      <?php if($errorLogin!= null){?> <span class="red_label"><?php echo $errorLogin; ?> </span> <?php } ?><br><br>
-      <input type="text" name="email" maxlength="30" placeholder="Podaj email" value="<?php echo $email;?>">
-      <?php if($errorEmail!= null){?> <span class="red_label"><?php echo $errorEmail; ?> </span> <?php } ?><br><br>
-      <input type="radio" name="type" value="s" checked>Uczen
-      <input type="radio" name="type" value="t">Nauczyciel
-      <input type="radio" name="type" value="a">Admin<br><br>
+      <li><input type="text" name="lastname" maxlength="30" placeholder="Podaj nazwisko" value="<?php echo $lastname;?>">
+      <?php if($errorLastname!= null){?> <span class="red_label"><?php echo $errorLastname; ?> </span> <?php } ?></li>
 
-      <input type="password" name="password" maxlength="30" placeholder="Podaj hasło">
-      <?php if($errorPassword!= null){?> <span class="red_label"><?php echo $errorPassword; ?> </span> <?php } ?><br><br>
-      <input type="submit" name="btn1" value="Zarejestruj">
+      <li><input type="text" name="login" maxlength="20" placeholder="Podaj login" value="<?php echo $login;?>">
+      <?php if($errorLogin!= null){?> <span class="red_label"><?php echo $errorLogin; ?> </span> <?php } ?></li>
 
+
+      <li><input type="text" name="email" maxlength="30" placeholder="Podaj email" value="<?php echo $email;?>">
+      <?php if($errorEmail!= null){?> <span class="red_label"><?php echo $errorEmail; ?> </span> <?php } ?></li>
+
+      <li><input type="password" name="password" maxlength="30" placeholder="Podaj hasło">
+      <?php if($errorPassword!= null){?> <span class="red_label"><?php echo $errorPassword; ?> </span> <?php } ?></li>
+
+      <li class="reg_sigin_ul_li_btn"><input type="submit" class="btn1" name="btn1" value="Zarejestruj"></li>
+
+</ul>
 
 
       </div>
     </content>
-
-    <footer>
-
-    </footer>
   </body>
+
 </html>
+<style media="screen">
+  <?php
+    include './css/widescreen.css';
+    mysqli_close($conn);
+?>
+</style>

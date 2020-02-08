@@ -6,7 +6,7 @@ $name = $_SESSION["name"];
 $lastname = $_SESSION["lastname"];
 $login = $_SESSION["login"];
 $email = $_SESSION["email"];
-$type = $_SESSION["type"];
+$type = 's';
 $password = $_SESSION["password"];
 
   $sql = "INSERT INTO `user`(`name`, `lastname`, `login`, `email`, `type`, `password`) VALUES ('$name','$lastname','$login','$email','$type','$password')";

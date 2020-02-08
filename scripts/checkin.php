@@ -1,18 +1,32 @@
 <?php
-  require_once("./connect.php");
+session_start();
+require_once("./connect.php");
 
-  if(isset($_POST['btn1']) && isset($_POST['login']) && isset($_POST['password'])){
-    $login = $_POST['login'];
-    $password = $_POST['password'];
+$login = $_SESSION['login'];
+$password = $_SESSION['password'];
 
-    $sql = "SELECT `password` FROM `user` WHERE `login` = \"$login\"";
+$sql = "SELECT `password` FROM `user` WHERE `login` = \"$login\"";
+$sql_type = "SELECT `type` FROM `user` WHERE `login` = \"$login\"";
 
-    $result = mysqli_query($connect, $sql);
-    $row = mysqli_fetch_assoc($result);
+$result = mysqli_query($connect, $sql);
+$result_type = mysqli_query($connect, $sql_type);
 
-    if($row['password'] == $password){
-      header('location: ../interfaceUSER.php');
-    }
+$row = mysqli_fetch_assoc($result);
+$row_type = mysqli_fetch_assoc($result_type);
+
+if($row['password'] == $password){
+  if($row_type['type'] == 's'){
+    header('location: ../interfaceUSER.php');
+  } else if ($row_type['type'] == 't') {
+    header('location: ../interfaceTEACHER.php');
+  }else{
+    header('location: ../interfaceADMIN.php');
   }
-  mysqli_close($connect);
+}else{
+
+  header('location: ../signin.php');
+
+}
+mysqli_close($connect);
+
  ?>

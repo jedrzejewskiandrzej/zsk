@@ -8,7 +8,26 @@ body{
   font-family: "Lato", sans-serif;
 }
 
-header{}
+.reg_sign_back{
+  background-color: #F08400;
+}
+
+.fleft{
+  float: left;
+}
+
+.fright{
+  float: right;
+}
+
+.dflex{
+  display: flex;
+  justify-content: center;
+  align-items:center;
+}
+.ditalic{
+  font-style: italic;
+}
 
 
 
@@ -39,20 +58,37 @@ header{}
   .col-12 {width: 100%;}
 
 
-  /* FORM LOGIN & REGISTER*/
+  /*LOGIN & REGISTER*/
 
-  .first{
-    font-size: 3vw;
+  .register_sign{
+    font-size: 1.3em;
     padding-bottom: 1em;
     padding-top: 1em;
     border: none;
-    position: relative;
     height: 100%;
   }
 
-  .first input[type="text"]{
-    margin:0 25% 0 25% ;
-    height: 3em;
+  .register_sign ul li {
+    list-style: none;
+    padding-left: 10%;
+    margin-top: 0.7em;
+  }
+
+  .red_label{
+    color: #ff0000;
+    font-style: italic;
+    float: right;
+    margin-right: 10%;
+  }
+
+  .register_sign h1{
+    text-align: center;
+    text-decoration: underline;
+  }
+
+  .register_sign input[type="text"] , .register_sign input[type="password"] {
+    font-size: 1em;
+    height:2em;
     border-width: 0 0 2px 0;
     border-style: inset;/*#032539*/
     border-color:  #dddad8;
@@ -60,79 +96,52 @@ header{}
     outline: none;
   }
 
-
-    #but1{
+  .register_sign input[type="submit"]{
+    font-size: 1vw;
+    height: 3em;
+    outline: none;
     width:22%;
-    margin-left: 25% ;
     margin-top: 3%;
-    box-shadow: 2px 2px 10px  rgba(0, 0, 0, 0.3);
+  }
+
+  .register_sign input[type="radio"]{
+    margin-right: 1%;
+  }
+
+  .reg_sigin_ul_li_btn, .change_from_btn{
+    text-align: center;
+    padding: 0 !important;
+  }
+
+  .register_sign a{
+    font-size: 0.8em;
+    margin-right: 1em;
+    margin-bottom: 1em;
+    text-decoration: underline;
+  }
+
+  .btn1{
+    box-shadow: 2px 2px 20px 5px  rgba(0, 0, 0, 0.2);
     border: none;
     background-color:#f6f6f6;
     height: 3em;
-    border-radius: 0.5em;
-    color:#176175;
   }
 
-    #but2{
-      width:22%;
-      margin-right: 25%;
-      margin-top: 3%;
-      box-shadow: 2px 2px 10px  rgba(0, 0, 0, 0.3);
-      border:none;
-      height: 3em;
-      background-color:#f6f6f6;
-      border-radius: 0.5em;
-      color:#176175;
-      float: right;
+  .btn1:hover{
+    box-shadow: 2px 2px 20px 5px rgba(0, 0, 0, 1);
+    transition:1s;
   }
 
-    #but1:hover{
-      background-image: linear-gradient(to right,#032539,#1c768f);
-      color: #fff;
-      transition: 1s;
-    }
-
-    #but2:hover{
-      background-image: linear-gradient(to left,#032539,#1c768f);
-      color: #fff;
-      transition: 1s;
-    }
-
-    #but1,#but2:focus{
-      outline: none;
-    }
-
-  h1{
-    text-align: center;
-    font-size: 2.5vw;
-  }
-
-  /* LOGIN */
-  .logimg{
-    background-color: #fa991c;
-    height: 100%;
-    border-radius: 0.8em 0 0 0.8em;
-  }
-
-  .fleft{
-    float: left;
-  }
-
-  .fright{
-    float: right;
-  }
-
-  .dflex{
-    display: flex;
-    justify-content: center;
-    align-items:baseline;
-  }
-
-  .pmid{
-    margin: 0 auto;
-    margin-top: 7%;
+  .pmid1{
+    margin-top:7%;
     background-color:#f6f6f6 ;/*#1c768f*/
-    height: 25em;
+    border-radius: 0.8em;
+    box-shadow: 5px 5px 20px 10px rgba(0, 0, 0, 0.3);
+  }
+
+  .pmid2{
+    margin-top:12%;
+    background-color:#f6f6f6 ;/*#1c768f*/
     border-radius: 0.8em;
     box-shadow: 5px 5px 20px 10px rgba(0, 0, 0, 0.3);
   }
@@ -142,6 +151,7 @@ header{}
 
   a{
     text-decoration: none;
+    color:black;
     color: none
   }
 
@@ -156,7 +166,6 @@ header{}
     left: 3em;
     top: 3em;
     bottom: 1em;
-
   }
 
   .inteMenu:hover{
@@ -173,6 +182,8 @@ header{}
     position: absolute;
     right:3em;
     top:4em;
+    display: flex;
+    align-items: center;
   }
 
   .inteMain{
@@ -182,26 +193,25 @@ header{}
     top:9em;
   }
 
+  .user_login{
+margin-left: 1em;
+  }
+
   /* MENU i NAV*/
   .inteNav ul li{
     display: inline;
     margin-left: 1em;
-    padding: 1em 0 0.75em 0;
+    padding: 0 0 0.75em 0;
     font-size: 1em;
   }
-
-
 
   .inteNav ul li:hover{
     border-bottom:0.3em solid #ffac1d;
   }
 
   .inteNav ul{
-    float: right;
-    margin-right: 3em;
-    padding-top: 0.8em;
-    height: 3em;
-
+  position: absolute;
+  right: 1em;
   }
 
   .inteMenu ul {
@@ -211,10 +221,10 @@ header{}
 
   .inteMenu  ul li{
     list-style-type: none;
-display: flex;
-height: 3.5em;
-justify-content: center;
-align-items: center;
+    display: flex;
+    height: 3.5em;
+    justify-content: center;
+    align-items: center;
   }
   .inteMenu  ul li a{
     color: #f6f6f6;
@@ -295,26 +305,6 @@ align-items: center;
     align-items: center;
   }
 
-  [class*='progressBar']{
-    border-radius: 30px;
-  }
-
-  .progressBarBack{
-    width: 80%;
-    height: 1.8em;
-    background-color: #032539;
-  }
-
-  .progressBarFront{
-    width:20%;
-    height: inherit;
-    background-color: #1c768f;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-  }
-
   .sec3{
     height:32em;
   }
@@ -326,8 +316,6 @@ align-items: center;
     background-color: #f6f6f6;
   }
 
-
-
   .sec4 > div{
     float: left;
     margin-top: 1em;
@@ -335,150 +323,80 @@ align-items: center;
   }
 /*POFILE*/
 
-.profimg{
-  height: 14em;
-  width: 14em;
-  margin-left: auto;
-  margin-right: auto;
-  border-radius: 50%;
-  border: 3px outset #ffac1d;
-}
-
-.proflvl{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 4em;
-  height: 4em;
-  left:10em;
-  background: #1c768f;
-  border-radius: 50%;
-  position:relative;
-  top: 10em;
-}
-
-.profcon{
+.profile_content{
   position:relative;
   top: 1em;
-  height: 16em;
-  width: 90%;
-  margin-left: auto;
-  margin-right: auto;
+  height: 85%;
+  width: 100%;
   background-color:#f6f6f6 ;
 }
 
-[class*='prof_ul'] {
-  height: inherit;
-}
-
-.prof_ul1{
-  width: 10%;
-  margin-left: 5%;
-}
-
-.prof_ul2{
-width: 30%;
-}
-
-.prof_ul3{
-  width: 20%;
+.profile_info, .profile_form{
+  height: 100%;
   display: flex;
-  justify-content: center;
   align-items:center;
 }
 
-.prof_ul4{
-  width: 30%;
-  border-left: 0.2em dashed #d4d4ce;
-  display: flex;
-  justify-content: center;
-  align-items:center;
+.profile_info ul, .profile_form ul{
+    list-style-type: none;
+    margin-left: 2em;
+  }
+
+.profile_info ul{
+  width: 40%
 }
 
-[class*='prof_ul'] > li{
-  list-style-type: none;
-  margin-top: 1.5em ;
+.profile_info ul li{
+  padding-bottom: 1em;
+  margin-top: 1em;
+  font-size: 1.5vw;
 }
- .profcon input {
-   color:#1c768f;
-   outline: none;
-   border: none;
-   background-color: #f6f6f6;
- }
+  .change_form{
+    margin-top: 1em;
+    padding-bottom: 1em;
+    padding-top: 1em;
+    border: none;
+    height: 100%;
+    width: 100%;
+  }
 
-.profcon input::placeholder{
-color:#1c768f;
-background-color: #f6f6f6;
-}
+  .change_form ul li {
+    list-style: none;
+    padding-left: 10%;
+    margin-top: 0.7em;
+  }
+  .change_form h3{
+    font-size: 1.3em;
+    text-align: center;
+    text-decoration: underline;
+  }
 
-.profcon button{
-  border: none;
-  width: 10em;
-  height: 2.5em;
-  background-color: #CE8523;
-  border-radius:0.5em;
-  box-shadow: 1px 1px 2px 2px rgba(0, 0, 0, 0.5);
-  color:#402B07;
-}
+  .change_form p{
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 1em;
+  }
 
-.profcon button:hover{
-  box-shadow: none;
-}
+  .change_form input[type="text"] , .change_form input[type="password"] {
+    font-size: 1vw;
+    height:1.7em;
+    border-width: 0 0 2px 0;
+    border-style: inset;/*#032539*/
+    border-color:  #dddad8;
+    background-color:#f6f6f6;
+    outline: none;
+    margin-left: auto;
+    margin-right: auto;
+  }
 
-.profcon button:focus{
-  outline: none;
-}
-
-.profinfo{
-  width: 100%;
-  height: 100%;
-  padding: 0;
-}
-
-.profinfo input{
-  display: block;
-  margin-right: auto;
-  margin-left: auto;
-  padding: 0.5em;
-  margin-bottom: 1em;
-  border-bottom: 1px solid grey;
-}
-
-.profinfo input:first-child{
-  margin-top: 1.5em;
-}
-
-.profinfo button{
-  display: block;
-  margin-right: auto;
-  margin-left: auto;
-}
-
-.profpass{
-  width: 70%;
-  height: 100%;
-  padding: 0;
-}
-
-.profpass input{
-  display: block;
-  margin-right: auto;
-  margin-left: auto;
-  padding: 0.5em;
-  margin-bottom: 1em;
-  border-bottom: 1px solid grey;
-}
-
-.profpass input:first-child{
-  margin-top: 30%;
-}
-
-.profpass button{
-  display: block;
-  margin-right: auto;
-  margin-left: auto;
-}
-
+  .change_form input[type="submit"]{
+    font-size: 1vw;
+    height: 2em;
+    outline: none;
+    width:10em;
+    margin-top: 3%;
+  }
 
 /* SET */
 
@@ -513,4 +431,5 @@ padding:  0.5em 0 0.5em 0;
 .setViewBtn{
   color: black;
   text-decoration: underline;
+}
 }

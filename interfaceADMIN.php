@@ -9,14 +9,12 @@
         include './css/widescreen.css';
        ?>
     </style>
-    <script>
-    <?php
-      include './js/script.js';
-     ?>
-    </script>
-  </head>
-  <body onload="move()">
 
+  </head>
+  <body>
+    <?php
+    require_once("./scripts/connect.php");
+     ?>
         <menu class="col-1-1 inteMenu">
 
           <ul class="col-12">
@@ -30,9 +28,20 @@
         </menu>
 
         <nav class="col-9 inteNav">
+          <p class="user_login fleft">
+            <?php
+            $login = $_SESSION['login'];
+            $sql = "SELECT `name`,`lastname` FROM `user` WHERE `login` = \"$login\"";
+            $result = mysqli_query($connect, $sql);
+
+            while($row = mysqli_fetch_assoc($result)){
+              echo "Witaj ".$row['name']." ".$row['lastname'];
+            }
+
+            ?>
           <ul>
             <li><a href="profile.php">Mój profil</a></li>
-            <li><a href="sigin.php">Wyloguj</a></li>
+            <li><a href="signin.php">Wyloguj</a></li>
           </ul>
         </nav>
 
@@ -59,15 +68,7 @@
           </section>
 
 
-          <section class="col-12 sec2">
-            <div class="col-12">
-              <div class="progressBarBack">
-                <div id="myBar" class="progressBarFront">
-                  20%
-                </div>
-              </div>
-            </div>
-          </section>
+
 
         </main>
 
