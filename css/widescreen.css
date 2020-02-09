@@ -61,9 +61,9 @@ body{
   /*LOGIN & REGISTER*/
 
   .register_sign{
-    font-size: 1.3em;
-    padding-bottom: 1em;
-    padding-top: 1em;
+    font-size: 1.3vw;
+    padding-bottom: 5%;
+    padding-top: 5%;
     border: none;
     height: 100%;
   }
@@ -71,7 +71,7 @@ body{
   .register_sign ul li {
     list-style: none;
     padding-left: 10%;
-    margin-top: 0.7em;
+    margin-top: 2%;
   }
 
   .red_label{
@@ -87,10 +87,9 @@ body{
   }
 
   .register_sign input[type="text"] , .register_sign input[type="password"] {
-    font-size: 1em;
-    height:2em;
-    border-width: 0 0 2px 0;
-    border-style: inset;/*#032539*/
+    font-size: 1.2vw;
+    border-width: 0 0 0.2vw 0;
+    border-style: inset;
     border-color:  #dddad8;
     background-color:#f6f6f6;
     outline: none;
@@ -98,7 +97,7 @@ body{
 
   .register_sign input[type="submit"]{
     font-size: 1vw;
-    height: 3em;
+    height: 2vw;
     outline: none;
     width:22%;
     margin-top: 3%;
@@ -114,36 +113,35 @@ body{
   }
 
   .register_sign a{
-    font-size: 0.8em;
-    margin-right: 1em;
-    margin-bottom: 1em;
+    font-size: 1vw;
+    margin-right: 5%;
+    margin-bottom: 2%;
     text-decoration: underline;
   }
 
   .btn1{
-    box-shadow: 2px 2px 20px 5px  rgba(0, 0, 0, 0.2);
+    box-shadow: 0.3vw 0.3vw 2vw 0.3vw  rgba(0, 0, 0, 0.5);
     border: none;
     background-color:#f6f6f6;
-    height: 3em;
   }
 
   .btn1:hover{
-    box-shadow: 2px 2px 20px 5px rgba(0, 0, 0, 1);
-    transition:1s;
+    box-shadow: 0.3vw 0.3vw 2vw 0.3vw rgba(0, 0, 0, 1);
+    transition:0.5s;
   }
 
   .pmid1{
     margin-top:7%;
     background-color:#f6f6f6 ;/*#1c768f*/
-    border-radius: 0.8em;
-    box-shadow: 5px 5px 20px 10px rgba(0, 0, 0, 0.3);
+    border-radius: 0.8vw;
+    box-shadow: 0.3vw 0.3vw 2vw 0.3vw rgba(0, 0, 0, 0.4);
   }
 
   .pmid2{
     margin-top:12%;
     background-color:#f6f6f6 ;/*#1c768f*/
-    border-radius: 0.8em;
-    box-shadow: 5px 5px 20px 10px rgba(0, 0, 0, 0.3);
+    border-radius: 0.8vw;
+    box-shadow: 0.3vw 0.3vw 2vw 0.3vw rgba(0, 0, 0, 0.4);
   }
 
 
@@ -161,36 +159,35 @@ body{
 
   .inteMenu{
     background-color: #242321;
-    height: 40em;
+    height: 90%;
     position: absolute;
-    left: 3em;
-    top: 3em;
-    bottom: 1em;
+    left: 4%;
+    top: 5%;
   }
 
   .inteMenu:hover{
-    box-shadow: 5px 5px 20px 10px rgba(0, 0, 0, 0.4);
+    box-shadow: 0.3vw 0.3vw 2vw 0.3vw rgba(0, 0, 0, 0.5);
   }
 
   .inteNav:hover{
-    box-shadow: 5px 5px 20px 10px rgba(0, 0, 0, 0.3);
+    box-shadow: 0.3vw 0.3vw 2vw 0.3vw rgba(0, 0, 0, 0.6);
   }
 
   .inteNav{
     background-color: #f6f6f6;
-    height: 3em;
+    height: 7.5%;
     position: absolute;
-    right:3em;
-    top:4em;
+    right:4%;
+    top:10%;
     display: flex;
     align-items: center;
   }
 
   .inteMain{
-    height: 32em;
+    height: auto;
     position: absolute;
-    right:3em;
-    top:9em;
+    right:4%;
+    top:20%;
   }
 
   .user_login{

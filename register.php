@@ -102,7 +102,7 @@ session_start();
         }
       }
 
-  if(!empty($_SESSION['login'])){ //wystarczy sprawdzić jedno pole w związku z tym, że cały formularz jest wymagany...akurat wybrałem sonbie hasło
+  if(!empty($_SESSION['login']) && !empty($_SESSION['name']) && !empty($_SESSION['lastname']) && !empty($_SESSION['password']) && !empty($_SESSION['email'])){ //wystarczy sprawdzić jedno pole w związku z tym, że cały formularz jest wymagany...akurat wybrałem sonbie hasło
   header('location: ./scripts/add_user.php');
   }
 
