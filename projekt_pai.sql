@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Czas generowania: 14 Lis 2019, 19:57
+-- Czas generowania: 09 Lut 2020, 20:10
 -- Wersja serwera: 10.1.38-MariaDB
 -- Wersja PHP: 7.2.15
 
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Baza danych: `projektsz`
+-- Baza danych: `projekt_pai`
 --
 
 -- --------------------------------------------------------
@@ -29,9 +29,8 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `category` (
-  `id_category` int(11) NOT NULL,
-  `category_name` varchar(30) COLLATE utf8mb4_polish_ci NOT NULL,
-  `id_set` int(11) NOT NULL
+  `id_category` varchar(5) COLLATE utf8mb4_polish_ci NOT NULL,
+  `category_name` varchar(20) COLLATE utf8mb4_polish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_polish_ci;
 
 -- --------------------------------------------------------
@@ -42,10 +41,16 @@ CREATE TABLE `category` (
 
 CREATE TABLE `class` (
   `id_class` varchar(3) COLLATE utf8mb4_polish_ci NOT NULL,
-  `class_name` varchar(4) COLLATE utf8mb4_polish_ci NOT NULL,
-  `id_user` int(11) NOT NULL,
-  `id_category` int(11) NOT NULL
+  `class_name` varchar(30) COLLATE utf8mb4_polish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_polish_ci;
+
+--
+-- Zrzut danych tabeli `class`
+--
+
+INSERT INTO `class` (`id_class`, `class_name`) VALUES
+('1a', 'Językowe bestie'),
+('1b', 'Biegli poligloci');
 
 -- --------------------------------------------------------
 
@@ -55,8 +60,9 @@ CREATE TABLE `class` (
 
 CREATE TABLE `set` (
   `id_set` int(11) NOT NULL,
-  `set_name` varchar(30) COLLATE utf8mb4_polish_ci NOT NULL,
-  `id_vocab` int(11) NOT NULL
+  `set_name` varchar(20) COLLATE utf8mb4_polish_ci NOT NULL,
+  `id_class` varchar(3) COLLATE utf8mb4_polish_ci DEFAULT NULL,
+  `id_category` varchar(5) COLLATE utf8mb4_polish_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_polish_ci;
 
 -- --------------------------------------------------------
@@ -67,14 +73,21 @@ CREATE TABLE `set` (
 
 CREATE TABLE `user` (
   `id_user` int(11) NOT NULL,
+  `name` varchar(20) COLLATE utf8mb4_polish_ci NOT NULL,
+  `lastname` varchar(30) COLLATE utf8mb4_polish_ci NOT NULL,
   `login` varchar(20) COLLATE utf8mb4_polish_ci NOT NULL,
   `email` varchar(30) COLLATE utf8mb4_polish_ci NOT NULL,
-  `name` text COLLATE utf8mb4_polish_ci NOT NULL,
-  `lastname` text COLLATE utf8mb4_polish_ci NOT NULL,
-  `level` int(2) NOT NULL,
-  `type` text COLLATE utf8mb4_polish_ci NOT NULL,
-  `password` varchar(72) COLLATE utf8mb4_polish_ci NOT NULL
+  `type` varchar(1) COLLATE utf8mb4_polish_ci NOT NULL,
+  `password` varchar(30) COLLATE utf8mb4_polish_ci NOT NULL,
+  `id_class` varchar(3) COLLATE utf8mb4_polish_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_polish_ci;
+
+--
+-- Zrzut danych tabeli `user`
+--
+
+INSERT INTO `user` (`id_user`, `name`, `lastname`, `login`, `email`, `type`, `password`, `id_class`) VALUES
+(1, 'Andrzej', 'Jędrzejewski', 'ajay_1', 'ajay@gmail.com', 's', 'ZAQ!2wsx', '1a');
 
 -- --------------------------------------------------------
 
@@ -84,8 +97,9 @@ CREATE TABLE `user` (
 
 CREATE TABLE `vocab` (
   `id_vocab` int(11) NOT NULL,
-  `vocab_pl` text COLLATE utf8mb4_polish_ci NOT NULL,
-  `vocab_en` text COLLATE utf8mb4_polish_ci NOT NULL
+  `vocab_pl` varchar(30) COLLATE utf8mb4_polish_ci NOT NULL,
+  `voacb_en` varchar(30) COLLATE utf8mb4_polish_ci NOT NULL,
+  `id_set` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_polish_ci;
 
 --
@@ -96,45 +110,39 @@ CREATE TABLE `vocab` (
 -- Indeksy dla tabeli `category`
 --
 ALTER TABLE `category`
-  ADD PRIMARY KEY (`id_category`),
-  ADD KEY `id_set` (`id_set`);
+  ADD PRIMARY KEY (`id_category`);
 
 --
 -- Indeksy dla tabeli `class`
 --
 ALTER TABLE `class`
-  ADD PRIMARY KEY (`id_class`),
-  ADD KEY `id_user` (`id_user`),
-  ADD KEY `id_category` (`id_category`);
+  ADD PRIMARY KEY (`id_class`);
 
 --
 -- Indeksy dla tabeli `set`
 --
 ALTER TABLE `set`
   ADD PRIMARY KEY (`id_set`),
-  ADD KEY `id_vocab` (`id_vocab`);
+  ADD KEY `id_class` (`id_class`),
+  ADD KEY `id_category` (`id_category`);
 
 --
 -- Indeksy dla tabeli `user`
 --
 ALTER TABLE `user`
-  ADD PRIMARY KEY (`id_user`);
+  ADD PRIMARY KEY (`id_user`),
+  ADD KEY `id_class` (`id_class`);
 
 --
 -- Indeksy dla tabeli `vocab`
 --
 ALTER TABLE `vocab`
-  ADD PRIMARY KEY (`id_vocab`);
+  ADD PRIMARY KEY (`id_vocab`),
+  ADD KEY `id_set` (`id_set`);
 
 --
 -- AUTO_INCREMENT for dumped tables
 --
-
---
--- AUTO_INCREMENT dla tabeli `category`
---
-ALTER TABLE `category`
-  MODIFY `id_category` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT dla tabeli `set`
@@ -146,7 +154,7 @@ ALTER TABLE `set`
 -- AUTO_INCREMENT dla tabeli `user`
 --
 ALTER TABLE `user`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT dla tabeli `vocab`
@@ -159,23 +167,18 @@ ALTER TABLE `vocab`
 --
 
 --
--- Ograniczenia dla tabeli `class`
---
-ALTER TABLE `class`
-  ADD CONSTRAINT `class_ibfk_1` FOREIGN KEY (`id_category`) REFERENCES `category` (`id_category`);
-
---
 -- Ograniczenia dla tabeli `set`
 --
 ALTER TABLE `set`
-  ADD CONSTRAINT `set_ibfk_1` FOREIGN KEY (`id_set`) REFERENCES `category` (`id_set`),
-  ADD CONSTRAINT `set_ibfk_2` FOREIGN KEY (`id_vocab`) REFERENCES `vocab` (`id_vocab`);
+  ADD CONSTRAINT `set_ibfk_1` FOREIGN KEY (`id_category`) REFERENCES `category` (`id_category`),
+  ADD CONSTRAINT `set_ibfk_2` FOREIGN KEY (`id_set`) REFERENCES `vocab` (`id_set`),
+  ADD CONSTRAINT `set_ibfk_3` FOREIGN KEY (`id_class`) REFERENCES `class` (`id_class`);
 
 --
 -- Ograniczenia dla tabeli `user`
 --
 ALTER TABLE `user`
-  ADD CONSTRAINT `user_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `class` (`id_user`);
+  ADD CONSTRAINT `user_ibfk_1` FOREIGN KEY (`id_class`) REFERENCES `class` (`id_class`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

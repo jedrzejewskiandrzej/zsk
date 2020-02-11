@@ -8,7 +8,7 @@ session_start();
     <title>SmAnSm</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <link rel="stylesheet" href="/css/master.css">
   </head>
   <body class="reg_sign_back">
 
