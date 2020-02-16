@@ -1,79 +1,145 @@
+<?php
+session_start();
+ ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Zestaw</title>
+    <title>Zestawy</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style media="screen">
-      <?php
-        include './css/widescreen.css';
-       ?>
-    </style>
+
   </head>
   <body>
-
+    <?php
+    require_once("./scripts/connect.php");
+    $login = $_SESSION['login'];
+     ?>
         <menu class="col-1-1 inteMenu">
 
           <ul class="col-12">
-            <li><a href="interfaceUSER.php">Strona główna</a></li>
+            <li><a href="interface.php">Strona główna</a></li>
             <li><a href="setUSER.php">Moje zestawy</a></li>
             <li><a href="#">Szybka powtórka</a></li>
+
+            <?php
+            $sql = "SELECT `type` FROM `user` WHERE `login` = \"$login\"";
+            $result = mysqli_query($connect, $sql);
+            while($row = mysqli_fetch_assoc($result)){
+              switch ($row['type']) {
+                case 't':
+                  echo <<< t
+                  <li><a href="#">Dodaj materiały</a></li>
+t;
+                  break;
+                  case 'a':
+                  echo <<< a
+                  <li><a href="#">Dodaj materiały</a></li>
+                  <li><a href="#">Zarządzaj</a></li>
+a;
+                break;
+
+                default:
+                  break;
+              }
+            }
+             ?>
+
           </ul>
         </menu>
 
         <nav class="col-9 inteNav">
+          <p class="user_login">
+            <?php
+            $sql = "SELECT `name`,`lastname` FROM `user` WHERE `login` = \"$login\"";
+            $result = mysqli_query($connect, $sql);
+
+            while($row = mysqli_fetch_assoc($result)){
+              echo "Witaj ".$row['name']." ".$row['lastname'];
+            }
+
+            ?>
+         </p>
+
           <ul>
             <li><a href="profile.php">Mój profil</a></li>
-            <li><a href="signin.php">Wyloguj</a></li>
+            <li><a href="./scripts/log_out.php">Wyloguj</a></li>
           </ul>
         </nav>
 
-        <main class="col-9 dflex inteMain">
+        <main class="col-9 inteMain">
 
-          <section class="col-11 sec4">
+          <section class="col-11 dcenter sec4">
 
-            <div class="col-12">
-
-                <h3 class="setName">Nowe zestawy</h3>
-                <button type="button" class="setViewBtn" name="button">Pokaż</button>
-              <ul class="set_ul1">
-                <li><a href="#">ZESTAW</a></li>
-                <li><a href="#">ZESTAW</a></li>
-                <li><a href="#">ZESTAW</a></li>
-                <li><a href="#">ZESTAW</a></li>
-              </ul>
-
+            <div class="col-3-4">
+              <p class="setName">BLA</p>
             </div>
 
-            <div class="col-12">
-
-                <h3 class="setName">Nowe zestawy</h3>
-
-              <ul class="set_ul1">
-                <li><a href="#">ZESTAW</a></li>
-                <li><a href="#">ZESTAW</a></li>
-                <li><a href="#">ZESTAW</a></li>
-                <li><a href="#">ZESTAW</a></li>
-              </ul>
-
+            <div class="col-3-4">
+              <p class="setName">BLA</p>
             </div>
 
-            <div class="col-12">
-
-                <h3 class="setName">Nowe zestawy</h3>
-
-              <ul class="set_ul1">
-                <li><a href="#">ZESTAW</a></li>
-                <li><a href="#">ZESTAW</a></li>
-                <li><a href="#">ZESTAW</a></li>
-                <li><a href="#">ZESTAW</a></li>
-              </ul>
-
+            <div class="col-3-4">
+              <p class="setName">BLA</p>
             </div>
+
+            <div class="col-3-4">
+              <p class="setName">BLA</p>
+            </div>
+
+            <div class="col-3-4">
+              <p class="setName">BLA</p>
+            </div>
+            <div class="col-3-4">
+              <p class="setName">BLA</p>
+            </div>
+
+            <div class="col-3-4">
+              <p class="setName">BLA</p>
+            </div>
+            <div class="col-3-4">
+              <p class="setName">BLA</p>
+            </div>
+
+            <div class="col-3-4">
+              <p class="setName">BLA</p>
+            </div>
+            <div class="col-3-4">
+              <p class="setName">BLA</p>
+            </div>
+
+            <div class="col-3-4">
+              <p class="setName">BLA</p>
+            </div>
+            <div class="col-3-4">
+              <p class="setName">BLA</p>
+            </div>
+            <div class="col-3-4">
+              <p class="setName">BLA</p>
+            </div>
+            <div class="col-3-4">
+              <p class="setName">BLA</p>
+            </div>
+            <div class="col-3-4">
+              <p class="setName">BLA</p>
+            </div>
+            <div class="col-3-4">
+              <p class="setName">BLA</p>
+            </div>
+            <div class="col-3-4">
+              <p class="setName">BLA</p>
+            </div>
+
+
 
           </section>
+
 
         </main>
 
   </body>
 </html>
+<style media="screen">
+  <?php
+    include './css/widescreen.css';
+   ?>
+</style>

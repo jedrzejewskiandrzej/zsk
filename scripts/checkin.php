@@ -15,13 +15,7 @@ $row = mysqli_fetch_assoc($result);
 $row_type = mysqli_fetch_assoc($result_type);
 
 if($row['password'] == $password){
-  if($row_type['type'] == 's'){
-    header('location: ../interfaceUSER.php');
-  } else if ($row_type['type'] == 't') {
-    header('location: ../interfaceTEACHER.php');
-  }else{
-    header('location: ../interfaceADMIN.php');
-  }
+    header('location: ../interface.php');
 }else{
 
   header('location: ../signin.php');

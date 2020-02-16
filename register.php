@@ -16,7 +16,7 @@ session_start();
     require_once("./scripts/connect.php");
     require_once("./functions/test_input.php");
 
-    $name = $lastname = $login = $email = $password = $errorName = $errorLastname = $errorLogin = $errorEmail = $errorPassword = '';
+    $name = $lastname = $login = $email = $password1 = $password2 = $errorName = $errorLastname = $errorLogin = $errorEmail = $errorPassword1 = $errorPassword2 = '';
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
@@ -91,15 +91,20 @@ session_start();
         }
       }
 
-      if (empty($_POST["password"])) {
-        $errorPassword = "Podaj hasło.";
-      } else {
-        $password = test_input($_POST["password"]);
-        if (!preg_match("/^(?=.*\d)(?=.*[a-z])(?=.*[\!\@\#\$\%\^\&\*\(\)\_\+\-\=])(?=.*[A-Z])(?!.*\s).{8,}$/",$password)) {
-          $errorPassword = "Niepoprawne hasło. Musi zawierać małe i wielkie litery, minmum 1 znak specjalny, minium 1 cyfrę oraz co najmniej 8 znaków";
-        }else{
-          $_SESSION["password"] = test_input($_POST["password"]);
-        }
+      if (empty($_POST["password1"])){
+         $errorPassword1 = $errorPassword2 = "Wypełnij oba pola.";
+       }else{
+         $password1 = test_input($_POST["password1"]);
+         $password2 = test_input($_POST["password2"]);
+         if (!preg_match("/^(?=.*\d)(?=.*[a-z])(?=.*[\!\@\#\$\%\^\&\*\(\)\_\+\-\=])(?=.*[A-Z])(?!.*\s).{8,}$/",$password1)) {
+           $errorPassword1 = "Niepoprawne hasło. Musi zawierać małe i wielkie litery, minmum 1 znak specjalny, minium 1 cyfrę oraz co najmniej 8 znaków";
+         }else{
+           if($password1!=$password2){
+             $errorPassword1 = "Hasła muszą być idenycznczne.";
+           }else{
+             $_SESSION["password"] = test_input($_POST["password1"]);
+           }
+         }
       }
 
   if(!empty($_SESSION['login']) && !empty($_SESSION['name']) && !empty($_SESSION['lastname']) && !empty($_SESSION['password']) && !empty($_SESSION['email'])){ //wystarczy sprawdzić jedno pole w związku z tym, że cały formularz jest wymagany...akurat wybrałem sonbie hasło
@@ -131,8 +136,11 @@ session_start();
       <li><input type="text" name="email" maxlength="30" placeholder="Podaj email" value="<?php echo $email;?>">
       <?php if($errorEmail!= null){?> <span class="red_label"><?php echo $errorEmail; ?> </span> <?php } ?></li>
 
-      <li><input type="password" name="password" maxlength="30" placeholder="Podaj hasło">
-      <?php if($errorPassword!= null){?> <span class="red_label"><?php echo $errorPassword; ?> </span> <?php } ?></li>
+      <li><input type="password" name="password1" maxlength="30" placeholder="Nowe hasło">
+      <?php if($errorPassword1!= null){?> <span class="red_label"><?php echo $errorPassword1; ?> </span> <?php } ?></li>
+
+      <li><input type="password" name="password2" maxlength="30" placeholder="Potwierdź hasło">
+      <?php if($errorPassword2!= null){?> <span class="red_label"><?php echo $errorPassword2; ?> </span> <?php } ?></li>
 
       <li class="reg_sigin_ul_li_btn"><input type="submit" class="btn1" name="btn1" value="Zarejestruj"></li>
 

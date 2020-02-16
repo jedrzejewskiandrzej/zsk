@@ -22,7 +22,7 @@ session_start();
     $_SESSION['id_user'] = $row['id_user'];
 
 
-    $name_change = $lastname_change = $login_change = $email_change = $password1 = $password2 = $errorName = $errorLastname = $errorLogin = $errorEmail = $errorPassword1 = $errorPassword2= '';
+    $name_change = $lastname_change = $login_change = $email_change = $password1 = $password2 = $errorName = $errorLastname = $errorLogin = $errorEmail = $errorPassword1 = $errorPassword2 = '';
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
@@ -30,7 +30,7 @@ session_start();
         $errorName = "Podaj imię.";
         } else {
           $name_change = test_input($_POST["name"]);
-          if (!preg_match("/^[A-Z][a-z]{2,}$/",$name_change)) {
+          if (!preg_match("/^[A-Z][a-ząęćżźńłóś]{3,}$/",$name_change)) {
             $errorName = "Upewnij się, że zacząłeś wielką literą i użyłeś tylko liter.";
         }else {
           $_SESSION["name_change"] = test_input($_POST["name"]);
@@ -41,7 +41,7 @@ session_start();
         $errorLastname = "Podaj nazwisko.";
         } else {
           $lastname_change = test_input($_POST["lastname"]);
-          if (!preg_match("/^[A-Z][a-z]{2,}$/",$lastname_change)) {
+          if (!preg_match("/^[A-Z][a-ząęćżźńłóś]{3,}$/",$lastname_change)) {
             $errorLastname = "Upewnij się, że zacząłeś wielką literą i użyłeś tylko liter.";
           }else {
             $_SESSION["lastname_change"] = test_input($_POST["lastname"]);
@@ -113,7 +113,7 @@ session_start();
         }
       }
 
-  if(!empty($_SESSION['login_change'])){ //wystarczy sprawdzić jedno pole w związku z tym, że cały formularz jest wymagany...akurat wybrałem sonbie hasło
+  if(!empty($_SESSION['login_change']) && !empty($_SESSION['name_change']) && !empty($_SESSION['lastname_change']) && !empty($_SESSION['password_change']) && !empty($_SESSION['email_change'])){ //wystarczy sprawdzić jedno pole w związku z tym, że cały formularz jest wymagany...akurat wybrałem sonbie hasło
   header('location: ./scripts/alter_user.php');
   }
 
@@ -123,9 +123,33 @@ session_start();
         <menu class="col-1-1 inteMenu">
 
           <ul class="col-12">
-            <li><a href="interfaceUSER.php">Strona główna</a></li>
+            <li><a href="interface.php">Strona główna</a></li>
             <li><a href="setUSER.php">Moje zestawy</a></li>
             <li><a href="#">Szybka powtórka</a></li>
+
+            <?php
+            $sql = "SELECT `type` FROM `user` WHERE `login` = \"$login\"";
+            $result = mysqli_query($connect, $sql);
+            while($row = mysqli_fetch_assoc($result)){
+              switch ($row['type']) {
+                case 't':
+                  echo <<< t
+                  <li><a href="#">Dodaj materiały</a></li>
+t;
+                  break;
+                  case 'a':
+                  echo <<< a
+                  <li><a href="#">Dodaj materiały</a></li>
+                  <li><a href="#">Zarządzaj</a></li>
+a;
+                break;
+
+                default:
+                  break;
+              }
+            }
+             ?>
+
           </ul>
         </menu>
 
@@ -143,7 +167,7 @@ session_start();
             ?>
           <ul>
             <li><a href="profile.php">Mój profil</a></li>
-            <li><a href="signin.php">Wyloguj</a></li>
+            <li><a href="./scripts/log_out.php">Wyloguj</a></li>
           </ul>
         </nav>
 
