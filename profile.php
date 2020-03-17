@@ -113,45 +113,26 @@ session_start();
         }
       }
 
-  if(!empty($_SESSION['login_change']) && !empty($_SESSION['name_change']) && !empty($_SESSION['lastname_change']) && !empty($_SESSION['password_change']) && !empty($_SESSION['email_change'])){ //wystarczy sprawdzić jedno pole w związku z tym, że cały formularz jest wymagany...akurat wybrałem sonbie hasło
+  if(!empty($_SESSION['login_change']) && !empty($_SESSION['name_change']) && !empty($_SESSION['lastname_change']) && !empty($_SESSION['password_change']) && !empty($_SESSION['email_change'])){
   header('location: ./scripts/alter_user.php');
   }
 
 }
 
      ?>
-        <menu class="col-1-1 inteMenu">
+     <menu class="col-1-1 inteMenu">
 
-          <ul class="col-12">
-            <li><a href="interface.php">Strona główna</a></li>
-            <li><a href="setUSER.php">Moje zestawy</a></li>
-            <li><a href="#">Szybka powtórka</a></li>
+       <ul class="col-12">
+         <li><a href="./interface.php">Strona główna</a></li>
+         <li><a href="./sets.php">Moje zestawy</a></li>
+         <li><a href="#">Szybka powtórka</a></li>
 
-            <?php
-            $sql = "SELECT `type` FROM `user` WHERE `login` = \"$login\"";
-            $result = mysqli_query($connect, $sql);
-            while($row = mysqli_fetch_assoc($result)){
-              switch ($row['type']) {
-                case 't':
-                  echo <<< t
-                  <li><a href="#">Dodaj materiały</a></li>
-t;
-                  break;
-                  case 'a':
-                  echo <<< a
-                  <li><a href="#">Dodaj materiały</a></li>
-                  <li><a href="#">Zarządzaj</a></li>
-a;
-                break;
+         <?php
+         include './scripts/menu.php'
+          ?>
 
-                default:
-                  break;
-              }
-            }
-             ?>
-
-          </ul>
-        </menu>
+       </ul>
+     </menu>
 
         <nav class="col-9 inteNav">
           <p class="user_login fleft">

@@ -24,7 +24,7 @@ session_start();
         $errorName = "Podaj imię.";
         } else {
           $name = test_input($_POST["name"]);
-          if (!preg_match("/^[A-Z][a-ząęćżźńłóś]{3,}$/",$name)) {
+          if (!preg_match("/^[A-Z][a-ząęćżźńłóś]{2,}$/",$name)) {
             $errorName = "Upewnij się, że zacząłeś wielką literą i użyłeś tylko liter.";
         }else {
           $_SESSION["name"] = test_input($_POST["name"]);
@@ -35,7 +35,7 @@ session_start();
         $errorLastname = "Podaj nazwisko.";
         } else {
           $lastname = test_input($_POST["lastname"]);
-          if (!preg_match("/^[A-Z][a-ząęćżźńłóś]{3,}$/",$lastname)) {
+          if (!preg_match("/^[A-Z][a-ząęćżźńłóś]{2,}$/",$lastname)) {
             $errorLastname = "Upewnij się, że zacząłeś wielką literą i użyłeś tylko liter.";
           }else {
             $_SESSION["lastname"] = test_input($_POST["lastname"]);
@@ -124,23 +124,29 @@ session_start();
       <ul>
 
       <li><input type="text" name="name" maxlength="20" placeholder="Podaj imię" value="<?php echo $name;?>" autofocus>
-      <?php if($errorName!= null){?> <span class="red_label"><?php echo $errorName; ?> </span> <?php } ?></li>
+      </li>
+      <?php if($errorName!= null){?> <lin class="red_label"><?php echo $errorName; ?> </li> <?php } ?>
 
       <li><input type="text" name="lastname" maxlength="30" placeholder="Podaj nazwisko" value="<?php echo $lastname;?>">
-      <?php if($errorLastname!= null){?> <span class="red_label"><?php echo $errorLastname; ?> </span> <?php } ?></li>
+      </li>
+      <?php if($errorLastname!= null){?> <li class="red_label"><?php echo $errorLastname; ?> </li> <?php } ?>
 
       <li><input type="text" name="login" maxlength="20" placeholder="Podaj login" value="<?php echo $login;?>">
-      <?php if($errorLogin!= null){?> <span class="red_label"><?php echo $errorLogin; ?> </span> <?php } ?></li>
+      </li>
+      <?php if($errorLogin!= null){?> <li class="red_label"><?php echo $errorLogin; ?> </li> <?php } ?>
 
 
       <li><input type="text" name="email" maxlength="30" placeholder="Podaj email" value="<?php echo $email;?>">
-      <?php if($errorEmail!= null){?> <span class="red_label"><?php echo $errorEmail; ?> </span> <?php } ?></li>
+      </li>
+      <?php if($errorEmail!= null){?> <li class="red_label"><?php echo $errorEmail; ?> </li> <?php } ?>
 
       <li><input type="password" name="password1" maxlength="30" placeholder="Nowe hasło">
-      <?php if($errorPassword1!= null){?> <span class="red_label"><?php echo $errorPassword1; ?> </span> <?php } ?></li>
+      </li>
+      <?php if($errorPassword1!= null){?> <li class="red_label"><?php echo $errorPassword1; ?> </li> <?php } ?>
 
       <li><input type="password" name="password2" maxlength="30" placeholder="Potwierdź hasło">
-      <?php if($errorPassword2!= null){?> <span class="red_label"><?php echo $errorPassword2; ?> </span> <?php } ?></li>
+      </li>
+      <?php if($errorPassword2!= null){?> <li class="red_label"><?php echo $errorPassword2; ?> </li <?php } ?>
 
       <li class="reg_sigin_ul_li_btn"><input type="submit" class="btn1" name="btn1" value="Zarejestruj"></li>
 

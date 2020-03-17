@@ -20,31 +20,12 @@ $login = $_SESSION['login'];
         <menu class="col-1-1 inteMenu">
 
           <ul class="col-12">
-            <li><a href="interface.php">Strona główna</a></li>
-            <li><a href="setUSER.php">Moje zestawy</a></li>
+            <li><a href="./interface.php">Strona główna</a></li>
+            <li><a href="./sets.php">Moje zestawy</a></li>
             <li><a href="#">Szybka powtórka</a></li>
 
             <?php
-            $sql = "SELECT `type` FROM `user` WHERE `login` = \"$login\"";
-            $result = mysqli_query($connect, $sql);
-            while($row = mysqli_fetch_assoc($result)){
-              switch ($row['type']) {
-                case 't':
-                  echo <<< t
-                  <li><a href="#">Dodaj materiały</a></li>
-t;
-                  break;
-                  case 'a':
-                  echo <<< a
-                  <li><a href="#">Dodaj materiały</a></li>
-                  <li><a href="#">Zarządzaj</a></li>
-a;
-                break;
-
-                default:
-                  break;
-              }
-            }
+            include './scripts/menu.php'
              ?>
 
           </ul>

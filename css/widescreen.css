@@ -38,8 +38,89 @@ body{
 
 @media only screen and (max-width: 767px) {
 
+.pmid2{
+  width: 80%;
+  background-color:#f6f6f6 ;/*#1c768f*/
+  border-radius: 0.8vw;
+  box-shadow: 0.3vw 0.3vw 2vw 0.3vw rgba(0, 0, 0, 0.4);
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
 }
 
+.register_sign{
+  font-size: 8vw;
+  padding-bottom: 5%;
+  padding-top: 5%;
+  border: none;
+}
+
+.register_sign ul li {
+  list-style: none;
+  padding-left: 10%;
+  margin-top: 1.5em;
+}
+
+.red_label{
+  color: #ff0000;
+  font-style: italic;
+}
+
+.register_sign h1{
+  text-align: center;
+  text-decoration: underline;
+}
+
+.register_sign input[type="text"] , .register_sign input[type="password"] {
+  font-size: 5vw;
+  border-width: 0 0 0.8vw 0;
+  border-style: inset;
+  border-color:  #dddad8;
+  background-color:#f6f6f6;
+  outline: none;
+}
+
+.register_sign input[type="submit"]{
+  font-size: 6vw;
+  height: 8vw;
+  outline: none;
+  width:50%;
+  margin-top: 3%;
+}
+
+.reg_sigin_ul_li_btn, .change_from_btn{
+  text-align: center;
+  padding: 0 !important;
+}
+
+.register_sign a{
+  margin-top: 1em;
+  font-size: 5vw;
+  margin-right: 5%;
+  margin-bottom: 2%;
+  text-decoration: underline;
+}
+
+.btn1{
+  box-shadow: 0.3vw 0.3vw 2vw 0.3vw  rgba(0, 0, 0, 0.5);
+  border: none;
+  background-color:#f6f6f6;
+}
+
+.btn1:hover{
+  box-shadow: 1vw 1vw 3vw 1vw rgba(0, 0, 0, 1);
+  transition:0.5s;
+}
+
+.pmid1{
+  margin-top:7%;
+  background-color:#f6f6f6 ;/*#1c768f*/
+  border-radius: 0.8vw;
+  box-shadow: 0.3vw 0.3vw 2vw 0.3vw rgba(0, 0, 0, 0.4);
+}
+
+}
 /* DESKTOP */
 
 @media only screen and (min-width: 1024px){
@@ -62,6 +143,14 @@ body{
   .col-12 {width: 100%;}
 
 
+  table, tr, th, td{
+    border: solid 1px grey;
+    border-collapse: collapse;
+    padding: 10px;
+    text-align: center;
+  }
+
+
   /*LOGIN & REGISTER*/
 
   .register_sign{
@@ -69,7 +158,7 @@ body{
     padding-bottom: 5%;
     padding-top: 5%;
     border: none;
-    height: 100%;
+
   }
 
   .register_sign ul li {
@@ -81,8 +170,7 @@ body{
   .red_label{
     color: #ff0000;
     font-style: italic;
-    float: right;
-    margin-right: 10%;
+    float: left;
   }
 
   .register_sign h1{
@@ -105,10 +193,6 @@ body{
     outline: none;
     width:22%;
     margin-top: 3%;
-  }
-
-  .register_sign input[type="radio"]{
-    margin-right: 1%;
   }
 
   .reg_sigin_ul_li_btn, .change_from_btn{
