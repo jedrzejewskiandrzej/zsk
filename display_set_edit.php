@@ -52,7 +52,7 @@ session_start();
 
           <section class="col-11 dcenter sec4">
           <button type="button" name="button"><a href="./sets_edit.php">Zestawy - edycja</a></button>
-            <form class="" action="./scripts/alter_set.php" method="post">
+
 
 
               <table>
@@ -60,13 +60,30 @@ session_start();
                   <th>PL</th>
                   <th>ENG</th>
                   <th>USUŃ</th>
-                  <th>AKTUALIZUJ</th>
+                  <!-- <th>AKTUALIZUJ</th> -->
                 </tr>
                 <?php
                 include './scripts/display_set_edit.php';
                 ?>
               </table>
-            </form>
+              <form class="" action="./scripts/alter_vocab.php" method="post">
+                <?php
+                $sql = "SELECT * FROM `vocab` WHERE `id_set` = $id_set";
+                $result = mysqli_query($connect, $sql);
+                $pom=0;
+
+                while($row = mysqli_fetch_assoc($result)){
+
+                  echo "<label for='vocab_pl[]'>PL: </label><input type='text' name='vocab_pl[]' value='$row[vocab_pl]'><label for='vocab_eng[]'>ENG: </label><input type='text' name='vocab_eng[]' value='$row[vocab_en]'><br><br>";
+                  $pom++;
+                }
+                echo "<input type='hidden' name='amount' value='$pom'>";
+                echo "<input type='hidden' name='id_set' value='$id_set'>";
+                echo "<input type='submit' class='btn1' value='Zastosuj zmiany'>";
+
+                 ?>
+              </form>
+
           </section>
 
         </main>

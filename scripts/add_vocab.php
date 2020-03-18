@@ -24,10 +24,9 @@ if(mysqli_query($connect,$sql)){
   for($i=0; $i < $amount; $i++){
     $vocab_pl = $array_vocab_pl[$i];
     $vocab_eng = $array_vocab_eng[$i];
-     $sql = "INSERT INTO `vocab`(`vocab_pl`, `voacb_en`,`id_set`) VALUES (\"$vocab_pl\",\"$vocab_eng\",\"$id_set\")";
+     $sql = "INSERT INTO `vocab`(`vocab_pl`, `vocab_en`,`id_set`) VALUES (\"$vocab_pl\",\"$vocab_eng\",\"$id_set\")";
     if(mysqli_query($connect,$sql)){
-
-      header("location:../addStuff.php");
+      header("location:../add_stuff.php");
     }
   }
 }
