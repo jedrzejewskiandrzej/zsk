@@ -31,5 +31,5 @@ if(mysqli_query($connect,$sql)){
   }
 }
 mysqli_close($connect);
-session_destroy();
+
  ?>

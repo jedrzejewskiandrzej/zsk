@@ -20,7 +20,6 @@ if($pom==$amount){
     $sql = "INSERT INTO `vocab`(`vocab_pl`, `vocab_en`,`id_set`) VALUES (\"$vocab_pl\",\"$vocab_eng\",\"$id_set\")";
     if(mysqli_query($connect,$sql)){
       $pom++;
-      echo "Jest"." ".$pom;
     }
   }
   if($pom==$amount){

@@ -50,11 +50,9 @@ session_start();
         <main class="col-9 inteMain">
 
           <section class="col-11 dcenter sec4">
-
-
-
+            <h1 class="tcenter he_set">Twoje zestawy</h1>
             <?php
-            ob_start();
+
             $sql = "SELECT `id_class` FROM `user` WHERE `login` = \"$login\"";
             $result = mysqli_query($connect, $sql);
             $id_class='';
@@ -73,12 +71,7 @@ session_start();
               </div>
 div;
             }
-
              ?>
-
-
-
-
           </section>
 
 

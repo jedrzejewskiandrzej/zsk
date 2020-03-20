@@ -51,11 +51,24 @@ session_start();
         <main class="col-9 inteMain">
 
           <section class="col-11 dcenter sec4">
-          <button type="button" name="button"><a href="./sets_edit.php">Zestawy - edycja</a></button>
+
+          <button type="button" class="back"><a href="./sets_edit.php">Cofnij do - Edytuj słówka</a></button>
+
+          <h1 class="tcenter">Edycja zestawu
+            <span class="ditalic">
+              <?php
+              $id_set = $_GET['id_set'];
+              $sql = "SELECT `set_name` FROM `set` WHERE `id_set` = $id_set";
+              $result = mysqli_query($connect, $sql);
+              while($row = mysqli_fetch_assoc($result)){
+                echo $row['set_name'];
+              }
+              ?>
+            </span>
+          </h1>
 
 
-
-              <table>
+              <table class="dcenter">
                 <tr>
                   <th>PL</th>
                   <th>ENG</th>
@@ -66,7 +79,8 @@ session_start();
                 include './scripts/display_set_edit.php';
                 ?>
               </table>
-              <form class="" action="./scripts/alter_vocab.php" method="post">
+              <form class="dflex set_change" action="./scripts/alter_vocab.php" method="post">
+                <ul>
                 <?php
                 $sql = "SELECT * FROM `vocab` WHERE `id_set` = $id_set";
                 $result = mysqli_query($connect, $sql);
@@ -74,14 +88,16 @@ session_start();
 
                 while($row = mysqli_fetch_assoc($result)){
 
-                  echo "<label for='vocab_pl[]'>PL: </label><input type='text' name='vocab_pl[]' value='$row[vocab_pl]'><label for='vocab_eng[]'>ENG: </label><input type='text' name='vocab_eng[]' value='$row[vocab_en]'><br><br>";
+                  echo "<li><label for='vocab_pl[]'>PL: </label><input type='text' name='vocab_pl[]' value='$row[vocab_pl]'><label for='vocab_eng[]'>ENG: </label><input type='text' name='vocab_eng[]' value='$row[vocab_en]'></li>";
                   $pom++;
                 }
+
                 echo "<input type='hidden' name='amount' value='$pom'>";
                 echo "<input type='hidden' name='id_set' value='$id_set'>";
                 echo "<input type='submit' class='btn1' value='Zastosuj zmiany'>";
 
                  ?>
+                 </ul>
               </form>
 
           </section>

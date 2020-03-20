@@ -13,7 +13,7 @@ if(isset($_GET['id_set'])){
     <tr>
       <td>$row[vocab_pl]</td>
       <td>$row[vocab_en]</td>
-      <td><a href="./scripts/delete_vocab.php?id_vocab=$id_vocab">usuń</a></td>
+      <td><a class="del" href="./scripts/delete_vocab.php?id_vocab=$id_vocab">usuń</a></td>
     </tr>
 TR;
 // <td><a href="./scripts/alter_vocab.php?id_vocab=$id_vocab">aktualizuj</a></td>

@@ -51,8 +51,8 @@ session_start();
         <main class="col-9 inteMain">
 
           <section class="col-11 dcenter sec4">
-          <button type="button" name="button"><a href="./sets.php">Zestawy</a></button>
-              <table>
+          <button type="button" class="back"><a href="./sets.php">Zestawy</a></button>
+              <table class="dcenter">
                 <tr>
                   <th>PL</th>
                   <th>ENG</th>

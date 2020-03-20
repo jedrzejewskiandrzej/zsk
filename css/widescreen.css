@@ -33,6 +33,10 @@ body{
   margin-right: auto;
 }
 
+.tcenter{
+  text-align: center;
+}
+
 
 /* MOBILE */
 
@@ -143,12 +147,6 @@ body{
   .col-12 {width: 100%;}
 
 
-  table, tr, th, td{
-    border: solid 1px grey;
-    border-collapse: collapse;
-    padding: 10px;
-    text-align: center;
-  }
 
 
   /*LOGIN & REGISTER*/
@@ -178,7 +176,7 @@ body{
     text-decoration: underline;
   }
 
-  .register_sign input[type="text"] , .register_sign input[type="password"] {
+  .register_sign input[type="text"] , .register_sign input[type="password"], .set_change input[type="text"]{
     font-size: 1.2vw;
     border-width: 0 0 0.2vw 0;
     border-style: inset;
@@ -187,7 +185,7 @@ body{
     outline: none;
   }
 
-  .register_sign input[type="submit"]{
+  .register_sign input[type="submit"], .set_change input[type="submit"]{
     font-size: 1vw;
     height: 2vw;
     outline: none;
@@ -481,8 +479,8 @@ margin-left: 1.1vw;
     height:1.7em;
     border-width: 0 0 0.1vw 0;
     border-style: inset;/*#032539*/
-    border-color:  #dddad8;
-    background-color:#f6f6f6;
+    border-color: #dddad8;
+    background-color: #f6f6f6;
     outline: none;
     margin-left: auto;
     margin-right: auto;
@@ -504,3 +502,40 @@ margin-left: 1.1vw;
   font-size: 2.5vw;
   color: #032539;/*#57cad5;*/
 }
+
+.back{
+  width: 15%;
+  height: 2.5em;
+}
+
+.del{
+  text-decoration: underline;
+}
+
+table, tr, th, td{
+  border: solid 1px grey;
+  border-collapse: collapse;
+  padding: 1em;
+  text-align: center;
+}
+
+.set_change{
+  margin-top: 2em;
+}
+
+.set_change li{
+  list-style-type: none;
+  margin-top: 5%;
+}
+
+.set_change label{
+  font-size: 1.2vw;
+}
+.he_set{
+  font-size: 300%;
+  margin-bottom: 2%;
+}
+ .set_change .btn1{
+   margin-left: auto;
+   margin-right: auto;
+ }
