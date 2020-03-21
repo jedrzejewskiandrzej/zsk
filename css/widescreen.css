@@ -343,7 +343,7 @@ margin-left: 1.1vw;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 4vw;
+    font-size: 3vw;
     color: #032539;/*#57cad5;*/
   }
 
@@ -456,25 +456,25 @@ margin-left: 1.1vw;
     width: 100%;
   }
 
-  .change_form ul li {
+  .change_form ul li , .change_form_second ul li{
     list-style: none;
     padding-left: 10%;
     margin-top: 0.7em;
   }
-  .change_form h3{
+  .change_form h3, .change_form_second h3{
     font-size: 1.5vw;
     text-align: center;
     text-decoration: underline;
   }
 
-  .change_form p{
+  .change_form p, .change_form_second p{
     display: block;
     margin-right: auto;
     margin-left: auto;
     margin-top: 10%;
   }
 
-  .change_form input[type="text"] , .change_form input[type="password"] {
+  .change_form input[type="text"] , .change_form input[type="password"] ,.change_form_second input[type="text"] , .change_form_second input[type="password"]{
     font-size: 1vw;
     height:1.7em;
     border-width: 0 0 0.1vw 0;
@@ -506,10 +506,26 @@ margin-left: 1.1vw;
 .back{
   width: 15%;
   height: 2.5em;
+  outline: none;
+  background-color:  #f6f6f6;
+  border: none;
+}
+
+.back:hover{
+  box-shadow: 0vw 0vw 2vw 0.1vw rgba(0, 0, 0, 0.5);
+  transition:0.3s;
 }
 
 .del{
   text-decoration: underline;
+}
+
+table{
+background-color:  #f6f6f6;
+}
+
+th{
+width:50% ;
 }
 
 table, tr, th, td{
@@ -536,6 +552,32 @@ table, tr, th, td{
   margin-bottom: 2%;
 }
  .set_change .btn1{
-   margin-left: auto;
-   margin-right: auto;
+   margin-left: 40%;
+ }
+
+ .set_header{
+   margin: 1em;
+ }
+
+ .change_form_second{
+   padding-bottom: 2.5%;
+   padding-top: 5%;
+   border: none;
+   overflow: auto;
+   width: 100%;
+   margin-bottom: 3%;
+ }
+
+ .set_add_content{
+   position:relative;
+   top: 4%;
+   height: auto;
+   width: 100%;
+   background-color: #f6f6f6;
+ }
+ .bigger{
+   margin-top: 2%;
+   width: 10%;
+   padding-top: 1%;
+   padding-bottom: 1%;
  }

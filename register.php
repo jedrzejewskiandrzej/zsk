@@ -123,30 +123,23 @@ session_start();
       <h1>Register...hello</h1>
       <ul>
 
-      <li><input type="text" name="name" maxlength="20" placeholder="Podaj imię" value="<?php echo $name;?>" autofocus>
-      </li>
-      <?php if($errorName!= null){?> <lin class="red_label"><?php echo $errorName; ?> </li> <?php } ?>
+        <?php if($errorName!= null){?> <li class="red_label"><?php echo $errorName; ?> </li> <?php } ?>
+      <li><input type="text" name="name" maxlength="20" placeholder="Podaj imię" value="<?php echo $name;?>" autofocus></li>
 
-      <li><input type="text" name="lastname" maxlength="30" placeholder="Podaj nazwisko" value="<?php echo $lastname;?>">
-      </li>
       <?php if($errorLastname!= null){?> <li class="red_label"><?php echo $errorLastname; ?> </li> <?php } ?>
+      <li><input type="text" name="lastname" maxlength="30" placeholder="Podaj nazwisko" value="<?php echo $lastname;?>"></li>
 
-      <li><input type="text" name="login" maxlength="20" placeholder="Podaj login" value="<?php echo $login;?>">
-      </li>
       <?php if($errorLogin!= null){?> <li class="red_label"><?php echo $errorLogin; ?> </li> <?php } ?>
+      <li><input type="text" name="login" maxlength="20" placeholder="Podaj login" value="<?php echo $login;?>"></li>
 
-
-      <li><input type="text" name="email" maxlength="30" placeholder="Podaj email" value="<?php echo $email;?>">
-      </li>
       <?php if($errorEmail!= null){?> <li class="red_label"><?php echo $errorEmail; ?> </li> <?php } ?>
+      <li><input type="text" name="email" maxlength="30" placeholder="Podaj email" value="<?php echo $email;?>"></li>
 
-      <li><input type="password" name="password1" maxlength="30" placeholder="Nowe hasło">
-      </li>
       <?php if($errorPassword1!= null){?> <li class="red_label"><?php echo $errorPassword1; ?> </li> <?php } ?>
+      <li><input type="password" name="password1" maxlength="30" placeholder="Nowe hasło"></li>
 
-      <li><input type="password" name="password2" maxlength="30" placeholder="Potwierdź hasło">
-      </li>
-      <?php if($errorPassword2!= null){?> <li class="red_label"><?php echo $errorPassword2; ?> </li <?php } ?>
+      <?php if($errorPassword2!= null){?> <li class="red_label"><?php echo $errorPassword2; ?> </li> <?php } ?>
+        <li><input type="password" name="password2" maxlength="30" placeholder="Potwierdź hasło"></li>
 
       <li class="reg_sigin_ul_li_btn"><input type="submit" class="btn1" name="btn1" value="Zarejestruj"></li>
 

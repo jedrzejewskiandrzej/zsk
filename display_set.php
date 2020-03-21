@@ -19,7 +19,6 @@ session_start();
        <ul class="col-12">
          <li><a href="./interface.php">Strona główna</a></li>
          <li><a href="./sets.php">Moje zestawy</a></li>
-         <li><a href="#">Szybka powtórka</a></li>
 
          <?php
          include './scripts/menu.php'
@@ -42,7 +41,7 @@ session_start();
          </p>
 
           <ul>
-            <li><a href="profile.php">Mój profil</a></li>
+            <li><a href="./profile.php">Mój profil</a></li>
             <li><a href="./scripts/log_out.php">Wyloguj</a></li>
           </ul>
         </nav>
@@ -51,8 +50,20 @@ session_start();
         <main class="col-9 inteMain">
 
           <section class="col-11 dcenter sec4">
-          <button type="button" class="back"><a href="./sets.php">Zestawy</a></button>
-              <table class="dcenter">
+          <button type="button" class="back"><a href="./sets.php">Cofnij do - Moje zestawy</a></button>
+          <h1 class="tcenter set_header">Wybrano zestaw "
+
+              <?php
+              $id_set = $_GET['id_set'];
+              $sql = "SELECT `set_name` FROM `set` WHERE `id_set` = $id_set";
+              $result = mysqli_query($connect, $sql);
+              while($row = mysqli_fetch_assoc($result)){
+                echo $row['set_name'];
+              }
+              ?>
+            "
+          </h1>
+              <table class="dcenter col-6">
                 <tr>
                   <th>PL</th>
                   <th>ENG</th>

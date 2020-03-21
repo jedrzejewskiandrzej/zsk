@@ -19,7 +19,6 @@ session_start();
        <ul class="col-12">
          <li><a href="./interface.php">Strona główna</a></li>
          <li><a href="./sets.php">Moje zestawy</a></li>
-         <li><a href="#">Szybka powtórka</a></li>
 
          <?php
          include './scripts/menu.php'
@@ -42,7 +41,7 @@ session_start();
          </p>
 
           <ul>
-            <li><a href="profile.php">Mój profil</a></li>
+            <li><a href="./profile.php">Mój profil</a></li>
             <li><a href="./scripts/log_out.php">Wyloguj</a></li>
           </ul>
         </nav>
@@ -54,8 +53,8 @@ session_start();
 
           <button type="button" class="back"><a href="./sets_edit.php">Cofnij do - Edytuj słówka</a></button>
 
-          <h1 class="tcenter">Edycja zestawu
-            <span class="ditalic">
+          <h1 class="tcenter set_header">Edycja zestawu "
+
               <?php
               $id_set = $_GET['id_set'];
               $sql = "SELECT `set_name` FROM `set` WHERE `id_set` = $id_set";
@@ -64,11 +63,11 @@ session_start();
                 echo $row['set_name'];
               }
               ?>
-            </span>
+            "
           </h1>
 
 
-              <table class="dcenter">
+              <table class="dcenter fleft col-5">
                 <tr>
                   <th>PL</th>
                   <th>ENG</th>

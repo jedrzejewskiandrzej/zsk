@@ -125,7 +125,6 @@ session_start();
        <ul class="col-12">
          <li><a href="./interface.php">Strona główna</a></li>
          <li><a href="./sets.php">Moje zestawy</a></li>
-         <li><a href="#">Szybka powtórka</a></li>
 
          <?php
          include './scripts/menu.php'
@@ -147,7 +146,7 @@ session_start();
 
             ?>
           <ul>
-            <li><a href="profile.php">Mój profil</a></li>
+            <li><a href="./profile.php">Mój profil</a></li>
             <li><a href="./scripts/log_out.php">Wyloguj</a></li>
           </ul>
         </nav>

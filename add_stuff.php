@@ -81,7 +81,6 @@ session_start();
        <ul class="col-12">
          <li><a href="./interface.php">Strona główna</a></li>
          <li><a href="./sets.php">Moje zestawy</a></li>
-         <li><a href="#">Szybka powtórka</a></li>
 
          <?php
          include './scripts/menu.php'
@@ -103,19 +102,19 @@ session_start();
 
             ?>
           <ul>
-            <li><a href="profile.php">Mój profil</a></li>
+            <li><a href="./profile.php">Mój profil</a></li>
             <li><a href="./scripts/log_out.php">Wyloguj</a></li>
           </ul>
         </nav>
 
         <main class="col-9 inteMain">
 
-          <section class="profile_content">
+          <section class="set_add_content">
             <?php
             ob_start();
             ?>
 
-            <form class="change_form"  action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post" autocomplete="off">
+            <form class="change_form_second"  action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post" autocomplete="off">
               <h3>Dodawanie zestawu</h3>
               <ul>
                 <li>
@@ -149,13 +148,13 @@ session_start();
                 <?php if($errorAmount!= null){?> <li><span class="red_label"><?php echo $errorAmount; ?> </span></li><br> <?php } ?>
                 <?php
                 if($supp == 0){
-                  echo "<li class='change_from_btn'><input type='submit' class='btn1' name='btn1' value='Zastosuj zmiany'></li>";
+                  echo "<li class='change_from_btn'><input type='submit' class='btn1 bigger' name='btn1' value='Zastosuj zmiany'></li>";
                 }else{
 
                   for ($i=1; $i <= $amount; $i++) {
-                    echo "<label for='vocab_pl[]'>PL: </label><input type='text' name='vocab_pl[]'><label for='vocab_eng[]'>ENG: </label><input type='text' name='vocab_eng[]'><br><br>";
+                    echo "<li><label for='vocab_pl[]'>PL: </label><input type='text' name='vocab_pl[]'><label for='vocab_eng[]'>ENG: </label><input type='text' name='vocab_eng[]'><li>";
                   }
-                  echo "<li class='change_from_btn'><input type='submit' class='btn1' name='btn2' value='Zastosuj zmiany'></li>";
+                  echo "<li class='change_from_btn'><input type='submit' class='btn1 bigger' name='btn2' value='Zastosuj zmiany'></li>";
                 }
 
                  ?>
@@ -168,9 +167,7 @@ session_start();
             }
              ?>
 
-            <div class="profile_form col-12">
 
-            </div>
           </section>
         </main>
   </body>

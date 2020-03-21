@@ -22,7 +22,6 @@ $login = $_SESSION['login'];
           <ul class="col-12">
             <li><a href="./interface.php">Strona główna</a></li>
             <li><a href="./sets.php">Moje zestawy</a></li>
-            <li><a href="#">Szybka powtórka</a></li>
 
             <?php
             include './scripts/menu.php'
@@ -56,12 +55,18 @@ $login = $_SESSION['login'];
 
             <div class="col-3-2">
               <p class="headpar">Losowe słówko</p>
-              <p class="midpar">BLA</p>
+              <p class="midpar"><?php
+              include './scripts/random_vocab.php';
+              echo $random_word ?></p>
             </div>
 
             <div class="col-3-2">
-              <p class="headpar">Ostatnia zestaw</p>
-              <p class="midpar">BLA</p>
+              <p class="headpar">Ostatni zestaw</p>
+              <p class="midpar"><?php
+              include './scripts/latest_set.php';
+
+              echo "<a href='./display_set.php?id_set=$id_set'>$latest_set</a>";
+               ?></p>
             </div>
 
             <div class="col-3-2">
